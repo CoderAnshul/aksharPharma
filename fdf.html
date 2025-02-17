@@ -1,0 +1,1041 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+   
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title> Akshar Avira Pharma</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+      <!-- CSS here -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/animate.css">
+      <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+      <link rel="stylesheet" href="assets/css/slick.css">
+      <link rel="stylesheet" href="assets/css/aos.css">
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+      <link rel="stylesheet" href="assets/css/flaticon.css">
+      <link rel="stylesheet" href="assets/css/nice-select.css">
+      <link rel="stylesheet" href="assets/css/spacing.css">
+      <link rel="stylesheet" href="assets/css/meanmenu.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="table.css">
+      <style>
+        .whatsapp-button {
+   position: fixed;
+   bottom: 40px;
+   right: 20px;
+   width: 60px;
+   height: 60px;
+   background-color: #25D366;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   z-index: 1000;
+}
+
+.whatsapp-button img {
+   width: 35px;
+   height: 35px;
+}
+
+.whatsapp-button:hover {
+   transform: scale(1.1);
+   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.inquiry-button {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.inquiry-button img {
+    width: 35px;
+    height: 35px;
+}
+
+.inquiry-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group div {
+    flex: 1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.send-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.send-btn:hover {
+    background: #0056b3;
+}
+     </style>
+   </head>
+   <<div class="inquiry-button" id="inquiryButton">
+    <img src="./assets/img/icon/question.png" alt="Inquiry">
+</div>
+
+<div id="inquiryModal" class="modal">
+   <div class="modal-content">
+       <span class="close">&times;</span>
+       <h2>Product Inquiry</h2>
+       
+       <div class="input-group">
+           <div>
+               <label>Your Name *</label>
+               <input type="text" placeholder="Your name here">
+           </div>
+           <div>
+               <label>Your Email *</label>
+               <input type="email" placeholder="Your email here">
+           </div>
+       </div>
+
+       <div class="input-group">
+           <div>
+               <label>Your Contact *</label>
+               <input type="text" placeholder="e.g. (+91) 94288 88076">
+           </div>
+       </div>
+
+       <label>Message *</label>
+       <textarea placeholder="Tell us a few words"></textarea>
+
+       <button class="send-btn">SEND MESSAGE</button>
+   </div>
+</div>
+
+   <div class="whatsapp-button" id="whatsappButton">
+    <img src="assets/img/whatsapp.png" alt="WhatsApp">
+</div>
+   <body>
+      <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+      <!-- Scroll-top -->
+       
+      <!-- Scroll-top-end-->
+      
+      <!-- preloader -->
+      <div id="preloadertp">
+         <img src="assets/img/preloader.png" alt="">
+      </div>
+      <!-- preloader end  -->
+      <!-- header-area -->
+      <header class="d-none d-xl-block">
+         <div class="header-custom" id="header-sticky">
+            <div class="header-logo-box">
+               <a href="index.html"><img style="height:8vw; max-height:200px; min-height:140px; object-fit: contain;" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+            </div>
+            <div class="header-menu-box">
+               <div class="header-menu-top">
+                  <div class="row align-items-center">
+                     <div class="col-lg-4">
+                        <div class="header-top-mob">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg>
+                           <span>Help Desk :</span>
+                           <a href="tel:+9159008855"> +918980662631 </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-8">
+                        <div class="header-time">
+                           <span>info@aksharavira.com</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header-menu-bottom">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="main-menu main-menu-second">
+                           <nav id="mobile-menu">
+                              <ul>
+                                 <li><a class="active" href="index.html">Home</a>
+                                 </li>
+                                 <li class="has-dropdown"><a href="#">Services</a>
+                                    <ul class="sub-menu">
+                                       <li><a href="fdf.html"> Finished Dose Formulations (FDF)</a></li>
+                                       <li><a href="api.html">Active Pharmaceutical ingredients (APIs)</a></li>
+                                       <li><a href="herbal.html">Herbal Extracts</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="contact.html">Contact</a></li>
+                                 <li><a href="about.html">about</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                     <div class="col-lg-5" style="display:flex; justify-content: flex-end;align-items: center;">
+                        <div class="header-cart-order d-flex align-items-center justify-content-end">
+                           <div class="header-cart-list  d-flex align-items-center justify-content-end mr-50">
+                              <button class="tp-menu-toggle mr-40"><i class="fa-solid fa-list"></i></button>
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- header-area-end -->  
+      
+      <!-- tp-mobile-header-area start -->
+      <div id="header-mob-sticky" class="tp-mobile-header-area pt-15 pb-15 d-xl-none">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-4 col-10">
+                  <div class="tp-mob-logo">
+                     <a href="index.html">  <img style="height:10vw; object-fit: contain;width:fit-content" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+                  </div>
+               </div>
+               <div class="col-md-8 col-2">
+                  <div class="tp-mobile-bar d-flex align-items-center justify-content-end">
+                     <div class="tp-bt-btn-banner d-none d-md-block d-xl-none mr-30">
+                        <a class="tp-bt-btn" href="tel:123456">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg><span>Help Desk :</span>+918980662631
+                        </a>
+                     </div>
+                     <button class="tp-menu-toggle"><i class="far fa-bars"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- tp-mobile-header-area end -->
+      <div class="tpsideinfo tp-side-info-area">
+         <button class="tpsideinfo__close"><i class="fal fa-times"></i></button>
+         <div class="tpsideinfo__logo mb-40">
+            <a href="index.html"><img src="assets/img/logo/white-logo.png" alt="logo"></a>
+         </div>
+
+         <div class="mobile-menu"></div>
+
+         <div class="tpsideinfo__content mb-60">
+            <p class=" d-none d-xl-block">Our mission is to ensure the generation of accurate and precise findings.</p>
+            <span>Contact Us</span>
+            <a href="#"><i class="fa-solid fa-star"></i>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </a>
+            <a href="tel:61383766284"><i class="fa-solid fa-star"></i>+918980662631</a>
+         </div>
+         <div class="tpsideinfo__socialicon">
+             
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+         </div>
+      </div>
+      <!-- sidebar-info-end -->
+
+      <div class="body-overlay"></div>          
+      
+      <!-- main-area -->
+      <main>
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area pt-100 pb-120 breadcrumb__overlay" data-background="assets/img/banner/breadcrumb-01.jpg">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-lg-6 col-md-7 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">Finished Dose Formulations (FDF)</h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- services-area -->
+         <section class="services-area pt-120 pb-90 grey-bg" data-background="assets/img/shape/shape-bg-01.png">
+
+            <div class="table-container">
+                <div class="table-header">ONCOLOGY</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Strength</th>
+                            <th>Dosage form</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abiraterone tablets</td>
+                            <td>250 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Deferasirox dispersible tablets</td>
+                            <td>100 mg, 250 mg, 400 mg, 500 mg</td>
+                            <td>Dispersible Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Thalidomide</td>
+                            <td>100 mg</td>
+                            <td>Capsules</td>
+                        </tr>
+                        <tr>
+                            <td>Lenalidomide</td>
+                            <td>25 mg</td>
+                            <td>Capsules</td>
+                        </tr>
+                        <tr>
+                            <td>Aprepitant</td>
+                            <td>80 mg & 125 mg</td>
+                            <td>Capsules</td>
+                        </tr>
+                        <tr>
+                            <td>Epirubicin</td>
+                            <td>100 mg, 50 mg, 10 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Doxorubicin</td>
+                            <td>50 mg, 10 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Docetaxel</td>
+                            <td>120 mg, 80 mg, 20 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Paclitaxel</td>
+                            <td>300 mg, 260 mg, 30 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Gemcitabine</td>
+                            <td>1000 mg, 200 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Filgrastim</td>
+                            <td>300 mcg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Gefitinib</td>
+                            <td>250 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Erlotinib</td>
+                            <td>150 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Imatinib</td>
+                            <td>400 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Vinblastine</td>
+                            <td>10 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Temozolomide</td>
+                            <td>5 mg, 100 mg, 250 mg</td>
+                            <td>Capsules</td>
+                        </tr>
+                        <tr>
+                            <td>Everolimus</td>
+                            <td>5 mg, 10 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Fulvestrant</td>
+                            <td>250 mg</td>
+                            <td>Injection</td>
+                        </tr>
+                        <tr>
+                            <td>Sorafenib</td>
+                            <td>200 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Busulfan</td>
+                            <td>60 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Melphalan</td>
+                            <td>50 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                        <tr>
+                            <td>Bicalutamide</td>
+                            <td>50 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Flutamide</td>
+                            <td>250 mg</td>
+                            <td>Tablets</td>
+                        </tr>
+                        <tr>
+                            <td>Fludarabine</td>
+                            <td>50 mg</td>
+                            <td>Vial</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="table-container">
+                <div class="table-header">ANTI COVID-19 / MUCORMYCOSIS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Favipiravir</td><td>200 mg, 400 mg, 800 mg</td><td>Tablets</td></tr>
+                    <tr><td>Remdesivir</td><td>100 mg</td><td>Vial</td></tr>
+                    <tr><td>Ulinastatin</td><td>100,000 IU</td><td>Vial</td></tr>
+                    <tr><td>Posaconazole</td><td>50 mg, 20 mg, 10 mg</td><td>Capsules</td></tr>
+                    <tr><td>Isavuconazole</td><td>100 mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">NEPHROLOGY (IMMUNOSUPPRESSIVE)</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Mycophenolate sodium</td><td>360 mg</td><td>Tablets</td></tr>
+                    <tr><td>Leflunomide</td><td>10 mg</td><td>Tablets</td></tr>
+                    <tr><td>Cyclosporin</td><td>25 mg, 50 mg, 100 mg</td><td>Capsules</td></tr>
+                    <tr><td>Azathioprine</td><td>50 mg, 20 mg, 10 mg</td><td>Capsules</td></tr>
+                    <tr><td>Sirolimus</td><td>1 mg</td><td>Capsules</td></tr>
+                    <tr><td>Tacrolimus</td><td>0.5 mg, 1 mg, 2 mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+        
+            <div class="table-container">
+                <div class="table-header">SUPPLEMENTS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Curcumin 95%</td><td>500 mg</td><td>Capsules</td></tr>
+                    <tr><td>L-Glutamine</td><td>15 g sachets</td><td>Powders</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">CARDIAC RANGE</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Amiodarone HCI</td><td>100 mg, 200 mg</td><td>Tablets</td></tr>
+                    <tr><td>Amlodipine Besilate</td><td>5 mg, 10 mg</td><td>Tablets</td></tr>
+                    <tr><td>Atenolol</td><td>50 mg, 100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Captopril</td><td>25 mg, 50 mg</td><td>Tablets</td></tr>
+                    <tr><td>Carvedilol</td><td>3.125 mg, 12.5 mg, 25 mg</td><td>Tablets</td></tr>
+                    <tr><td>Diltiazem Hydrochloride</td><td>30 mg, 60 mg</td><td>Tablets</td></tr>
+                    <tr><td>Enalapril Maleate</td><td>5 mg, 10 mg, 20 mg</td><td>Tablets</td></tr>
+                    <tr><td>Lisinopril</td><td>5 mg, 10 mg</td><td>Tablets</td></tr>
+                    <tr><td>Losartan Potassium</td><td>50 mg, 100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Metoprolol Tartrate</td><td>50 mg, 100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Nifedipine Extended Release</td><td>20 mg, 30 mg</td><td>Tablets</td></tr>
+                    <tr><td>Prazosin Hydrochloride</td><td>1 mg</td><td>Tablets</td></tr>
+                    <tr><td>Ramipril</td><td>10 mg</td><td>Tablets</td></tr>
+                    <tr><td>Propranolol Hydrochloride</td><td>40 mg</td><td>Tablets</td></tr>
+                    <tr><td>Acetazolamide</td><td>250 mg</td><td>Tablets</td></tr>
+                    <tr><td>Amiloride HCI</td><td>5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Hydrochlorothiazide</td><td>25 mg, 50 mg</td><td>Tablets</td></tr>
+                    <tr><td>Spironolactone</td><td>25 mg, 50 mg, 100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Valsartan</td><td>80 mg, 160 mg</td><td>Tablets</td></tr>
+                    <tr><td>Atorvastatin</td><td>10 mg, 40 mg</td><td>Tablets</td></tr>
+                    <tr><td>Rosuvastatin</td><td>20 mg, 40 mg</td><td>Tablets</td></tr>
+                    <tr><td>Isosorbide Mono Nitrate</td><td>10 mg, 20 mg, 30 mg, 40 mg</td><td>Tablets</td></tr>
+                    <tr><td>Nebivolol</td><td>2.5 mg, 5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Verapamil</td><td>80 mg</td><td>Tablets</td></tr>
+                    <tr><td>Telmisartan</td><td>20 mg</td><td>Tablets</td></tr>
+                    <tr><td>Frusemide</td><td>20 mg</td><td>Tablets</td></tr>
+                    <tr><td>Olmesartan</td><td>20 mg</td><td>Tablets</td></tr>
+                    <tr><td>Fenofibrate Capsules</td><td>200 mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">ANTIMALARIAL DRUGS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Amodiaquine Oral Suspension</td><td>50mg / 5ml</td><td>Suspension</td></tr>
+                    <tr><td>Artemether & Lumefantrine</td><td>20mg+12mg/5ml</td><td>Syrup</td></tr>
+                    <tr><td>Artemether & Lumefantrine</td><td>20mg+12mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>40mg + 240mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>60mg + 360mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>80mg+480mg</td><td>Tablets</td></tr>
+                    <tr><td>Chloroquine Phosphate</td><td>250mg</td><td>Tablets</td></tr>
+                    <tr><td>Hydroxychloroquine</td><td>200mg</td><td>Tablets</td></tr>
+                    <tr><td>Mefloquine Hydrochloride</td><td>250mg</td><td>Tablets</td></tr>
+                    <tr><td>Mepacrine Hydrochloride Tablets</td><td>50mg, 100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Quinine Sulphate Tablets</td><td>300 mg</td><td>Tablets</td></tr>
+                    <tr><td>Proguanil Hydrochloride Tablets</td><td>100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Atovaquone + Proguanil Tablets</td><td>25mg+100mg</td><td>Tablets</td></tr>
+                    <tr><td>Primaquine</td><td>2.5 mg, 5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Pyronaridine+ Artesunate</td><td>180 mg 60 mg, 60 mg + 20 mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">ANTIHISTAMINE DRUGS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Cetirizine Dihydrochloride</td><td>5mg, 10 mg</td><td>Tablets</td></tr>
+                    <tr><td>Cimetidine Tablets</td><td>200 mg, 400 mg</td><td>Tablets</td></tr>
+                    <tr><td>Levocetirizine</td><td>5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Levocetirizine+ Montelukast</td><td>5 mg + 10 mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+        
+        
+            <div class="table-container">
+                <div class="table-header">GIT AGENTS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Esomeprazole Magnesium</td><td>40mg</td><td>Tablets</td></tr>
+                    <tr><td>Gastro - Resistant Omeprazole</td><td>10mg, 20mg</td><td>Tablets</td></tr>
+                    <tr><td>Pantoprazole</td><td>40mg</td><td>Tablets</td></tr>
+                    <tr><td>Rabeprazole Sodium</td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Rabeprazole Sodium</td><td>20mg</td><td>Tablets</td></tr>
+                    <tr><td>Dexrabeprazole</td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Bisacodyl</td><td>5mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Magnesium Hydroxide and Aluminium</td><td>240mg / 5ml</td><td>Oral Suspension</td></tr>
+                    <tr><td>Magnesium Hydroxide and Aluminium</td><td></td><td>Tablets</td></tr>
+                    <tr><td>Hydroxide Tablets</td><td></td><td></td></tr>
+                    <tr><td>Metoclopramide</td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Ondansetron</td><td>4mg</td><td>Tablets</td></tr>
+                    <tr><td>Domperidone</td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Hyoscine Butylbromide</td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Sodium Picosulphate</td><td>400mg</td><td>Tablets</td></tr>
+                    <tr><td>Ursodeoxycholic acid</td><td>300mg</td><td>Tablets</td></tr>
+                    <tr><td>Racecadotril</td><td>100mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">ANTI INFECTIVES</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Azithromycin</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Clarithromycin</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Erythromycin Stearate</td><td>125mg / 5ml</td><td>Oral Suspension</td></tr>
+                    <tr><td>Erythromycin Stearate</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Clindamycin Hydrochloride</td><td>150mg, 300 mg</td><td>Capsules</td></tr>
+                    <tr><td>Ciprofloxacin</td><td>250mg, 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Levofloxacin</td><td>250mg, 500 mg, 750 mg</td><td>Tablets</td></tr>
+                    <tr><td>Nalidixic Acid</td><td>500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Norfloxacin</td><td>200mg, 400mg</td><td>Tablets</td></tr>
+                    <tr><td>Ofloxacin</td><td>200mg, 400mg</td><td>Tablets</td></tr>
+                    <tr><td>Paediatric Co-Trimoxazole Oral Suspension</td><td>240mg / 5ml</td><td>Oral Suspension</td></tr>
+                    <tr><td>Metronidazole</td><td>125mg/5ml</td><td>Oral Suspension</td></tr>
+                    <tr><td>Metronidazole</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Ivermectin</td><td>3 mg, 6 mg, 12 mg</td><td>Tablets</td></tr>
+                    <tr><td>Rifaximin</td><td>400 mg</td><td>Tablets</td></tr>
+                    <tr><td>Linezolid</td><td>600 mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">ANTIFUNGALS ORALS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Fluconazole</td><td>50 mg, 150mg, 200 mg</td><td>Capsules</td></tr>
+                    <tr><td>Ketoconazole</td><td>200 mg</td><td>Tablets</td></tr>
+                    <tr><td>Nystatin Oral Suspension</td><td>1100000 IU/ml</td><td>Oral Suspension</td></tr>
+                    <tr><td>Secnidazole</td><td>500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Griseofulvin</td><td>250 mg, 500 mg</td><td>Tablets</td></tr>
+                    <tr><td>Itraconazole</td><td>100 mg, 200 mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">OTHER ANTI FUNGALS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Clotrimazole Lotion</td><td>1% w/w</td><td>Lotion</td></tr>
+                    <tr><td>Clotrimazole Pessaries</td><td>100 mg</td><td>Tablets</td></tr>
+                    <tr><td>Nystatin Vaginal Pessaries</td><td>100000IU</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">BETA-LACTUM ANTIBIOTIC</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Amoxicillin and Potassium Clavulanate</td><td>625g</td><td>Tablets</td></tr>
+                    <tr><td>Amoxicillin</td><td>250mg</td><td>Capsules</td></tr>
+                    <tr><td>Amoxicillin</td><td>500mg</td><td>Capsules</td></tr>
+                    <tr><td>Amoxicillin</td><td>125mg</td><td>Dispersible Tablets</td></tr>
+                    <tr><td>Amoxicillin</td><td>250mg</td><td>Tablets</td></tr>
+                    <tr><td>Amoxicillin Oral Suspension</td><td>125mg</td><td>Suspension</td></tr>
+                    <tr><td>Amoxicillin Oral Suspension</td><td>250mg / 5ml</td><td>Suspension</td></tr>
+                    <tr><td>Ampicillin</td><td>250mg</td><td>Capsules</td></tr>
+                    <tr><td>Ampicillin</td><td>500mg</td><td>Capsules</td></tr>
+                    <tr><td>Ampicillin & Cloxacillin</td><td>250mg + 250mg</td><td>Capsules</td></tr>
+                    <tr><td>Ampicillin</td><td>125mg</td><td>Dispersible Tablets</td></tr>
+                    <tr><td>Ampicillin Oral Suspension</td><td>125mg/5ml</td><td>Oral Suspension</td></tr>
+                    <tr><td>Flucloxacillin</td><td>250 mg, 500 mg</td><td>Capsules</td></tr>
+                    <tr><td>Cloxacillin</td><td>250 mg, 500 mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">CEPHALOSPORIN ANTIBIOTIC</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Cefaclor</td><td>250mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefadroxil</td><td>500mg</td><td>Capsules</td></tr>
+                    <tr><td>Cefalexin</td><td>250mg</td><td>Capsules</td></tr>
+                    <tr><td>Cefalexin</td><td>500mg</td><td>Capsules</td></tr>
+                    <tr><td>Cefalexin</td><td>125mg</td><td>Dispersible Tablets</td></tr>
+                    <tr><td>Cefalexin</td><td>250mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefalexin</td><td>125mg/5ml</td><td>60ml</td></tr>
+                    <tr><td>Cefdinir</td><td>300mg</td><td>Capsules</td></tr>
+                    <tr><td>Cefixime</td><td>100mg</td><td>Capsules</td></tr>
+                    <tr><td>Cefixime</td><td>200mg</td><td>Capsules</td></tr>
+                    <tr><td>Cefixime</td><td>100mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefixime</td><td>200mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Dispersible Tablets</td></tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Dry Syrup</td></tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>200mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefuroxime Axetil</td><td>250mg, 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Cefuroxime Axetil</td><td>125mg/5ml</td><td>Dry Syrup</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">ANTIDIABETIC DRUGS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Gliclazide</td><td>60mg</td><td>Modified Release Tablets</td></tr>
+                    <tr><td>Glipizide</td><td>5mg</td><td>Tablets</td></tr>
+                    <tr><td>Metformin Hydrochloride</td><td>850mg</td><td>Sustained Release Tablets</td></tr>
+                    <tr><td>Metformin Tablets</td><td>1000mg</td><td>Tablets</td></tr>
+                    <tr><td>Metformin Tablets</td><td>500mg</td><td>Tablets</td></tr>
+                    <tr><td>Metformin Tablets</td><td>850mg</td><td>Tablets</td></tr>
+                    <tr><td>Tenaligliptin</td><td>20mg</td><td>Tablets</td></tr>
+                    <tr><td>Gliclazide+ Metformin</td><td>80mg + 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Glimepiride+ Metformin</td><td>2mg + 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Voglibose</td><td>0.3mg, 0.4mg</td><td>Tablets</td></tr>
+                    <tr><td>Glibenclamide</td><td>5mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">ANALGESIC</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Celecoxib</td><td>100mg, 200mg</td><td>Capsules</td></tr>
+                    <tr><td>Diclofenac Gel</td><td>1% w/w</td><td>Gel</td></tr>
+                    <tr><td>Slow Diclofenac Tablets</td><td>50mg, 100mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>100mg</td><td>Tablets</td></tr>
+                    <tr><td>Diclofenac & Paracetamol</td><td>50mg + 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Ibuprofen</td><td>200mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>400mg</td><td>Tablets</td></tr>
+                    <tr><td>Paediatric Paracetamol Oral Solution</td><td>125mg/5ml</td><td>Oral Solution</td></tr>
+                    <tr><td>Carbocisteine</td><td>2% w/v, 5% w/v</td><td>Syrup</td></tr>
+                    <tr><td>Serratiopeptidase</td><td>5mg, 10mg</td><td>Tablets</td></tr>
+                    <tr><td>Thiocolchicoside</td><td>8mg</td><td>Capsules</td></tr>
+                    <tr><td>Promethazine</td><td>5mg, 25mg</td><td>Tablets</td></tr>
+                    <tr><td>Naproxen</td><td>250mg, 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Hydrocortisone Tablets</td><td>5mg, 10mg, 20mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+        
+        
+            <div class="table-container">
+                <div class="table-header">CNS DRUGS</div>
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Strength</th>
+                        <th>Dosage Form</th>
+                    </tr>
+                    <tr><td>Amitriptyline</td><td>25mg</td><td>Tablets</td></tr>
+                    <tr><td>Cabergoline</td><td>0.5mg</td><td>Tablets</td></tr>
+                    <tr><td>Gastro Resistant Sodium Valproate</td><td>100mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>200mg</td><td>Tablets</td></tr>
+                    <tr><td>Pregabalin</td><td>75mg</td><td>Capsules</td></tr>
+                    <tr><td></td><td>150mg</td><td>Capsules</td></tr>
+                    <tr><td>Sumatriptan</td><td>50mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>100mg</td><td>Tablets</td></tr>
+                    <tr><td>Quetiapine Fumarate</td><td>25mg, 50mg, 100mg</td><td>Tablets</td></tr>
+                    <tr><td>Piracetam</td><td>100mg, 200mg, 400mg</td><td>Tablets</td></tr>
+                    <tr><td>Escitalopram</td><td>10mg</td><td>Tablets</td></tr>
+                    <tr><td>Levodopa & Carbidopa</td><td>275mg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>110mg</td><td>Tablets</td></tr>
+                    <tr><td>Risperidone</td><td>2mg</td><td>Tablets</td></tr>
+                    <tr><td>Divalproex</td><td>250mg, 500mg</td><td>Tablets</td></tr>
+                    <tr><td>Levetiracetam</td><td>100mg/ml</td><td>Oral Solution</td></tr>
+                    <tr><td>Procyclidine</td><td>5mg</td><td>Tablets</td></tr>
+                    <tr><td>Neostigmine</td><td>15mg</td><td>Tablets</td></tr>
+                    <tr><td>Alprazolam</td><td>0.25mg, 5mg</td><td>Tablets</td></tr>
+                    <tr><td>Lithium Carbonate</td><td>300mg</td><td>Tablets</td></tr>
+                    <tr><td>Gabapentin</td><td>300mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">ANTIGOUT DRUGS</div>
+                <table>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
+                    <tr><td>Allopurinol Tablets</td><td>100mg, 300mg</td><td>Tablets</td></tr>
+                    <tr><td>Colchicine Tablets</td><td>500mcg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">ERECTILE DYSFUNCTION AGENT</div>
+                <table>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
+                    <tr><td>Tadalafil</td><td>5mg, 10mg, 20mg</td><td>Tablets</td></tr>
+                    <tr><td>Dapoxetine</td><td>30mg, 60mg, 90mg</td><td>Tablets</td></tr>
+                    <tr><td>Sildenafil</td><td>25mg, 50mg, 100mg</td><td>Tablets</td></tr>
+                    <tr><td>Vardenafil (Under development)</td><td>5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Avanafil</td><td>50 mg, 100 mg</td><td>Capsules</td></tr>
+                    <tr><td>Sildenafil</td><td>10 mg</td><td>Oral jelly</td></tr>
+                    <tr><td>Vardenafil (Under development)</td><td>10 mg</td><td>Oral jelly</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">BENIGN PROSTATE HYPERPLASIA AGENT</div>
+                <table>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
+                    <tr><td>Finasteride</td><td>1 mg, 5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Flutamide</td><td>3250mg</td><td>Tablets</td></tr>
+                    <tr><td>Tamsulosin Hydrochloride (Modified Release) & Finasteride</td><td>0.4 mg + 5 mg</td><td>Capsules</td></tr>
+                    <tr><td>Tamsulosin Hydrochloride (Modified Release) & Dutasteride</td><td>0.4 mg + 5 mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">ANTI OBESITY</div>
+                <table>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
+                    <tr><td>Orlistat</td><td>60mg</td><td>Capsules</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">ANTI-ACNE</div>
+                <table>
+                    <tr><td>Azelaic acid cream</td><td>10% w/w</td><td>Cream</td></tr>
+                    <tr><td></td><td>20% w/w</td><td>Cream</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">THYROID REGULATORS</div>
+                <table>
+                    <tr><td>Levothyroxine</td><td>25 mcg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>50 mcg</td><td>Tablets</td></tr>
+                    <tr><td></td><td>100 mcg</td><td>Tablets</td></tr>
+                    <tr><td>Thyroxine</td><td>0.1 mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">BONE MODIFYING AGENTS</div>
+                <table>
+                    <tr><td>Alendronate</td><td>5 mg, 10 mg, 35 mg, 70 mg</td><td>Tablets</td></tr>
+                    <tr><td>Risedronate</td><td>35 mg, 150 mg</td><td>Tablets</td></tr>
+                    <tr><td>Ibandronate</td><td>50 mg, 150 mg</td><td>Tablets</td></tr>
+                    <tr><td>Ergocalciferol</td><td>All strength</td><td>Tablets</td></tr>
+                    <tr><td>Calcium & Cholecalciferol</td><td>All strength</td><td>Tablets</td></tr>
+                    <tr><td>Vitamin D3</td><td>60000 IU</td><td>Granules/Sachets</td></tr>
+                    <tr><td></td><td>400 IU/ml</td><td>Drops</td></tr>
+                </table>
+            </div>
+            
+        
+            <div class="table-container">
+                <div class="table-header">RESPIRATORY</div>
+                <table>
+                    <tr><td>Xylometazoline</td><td>0.1%</td><td>Nasal Drops BP</td></tr>
+                    <tr><td>Theophylline</td><td>200 mg, 400 mg</td><td>Tablets</td></tr>
+                    <tr><td>Montelukast</td><td>4 mg, 5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Salbutamol</td><td>2 mg/5 ml</td><td>Syrup</td></tr>
+                    <tr><td>Etophylline & Theophylline</td><td>23 mg + 77 mg/5 ml</td><td>Syrup</td></tr>
+                    <tr><td>Terbutaline</td><td>2.5 mg</td><td>Tablets</td></tr>
+                    <tr><td>Terbutaline Sulphate, Ambroxol, Guaiphenesin and Menthol</td><td>1.5 mg + 15 mg + 50 mg + 1 mg</td><td>Syrup</td></tr>
+                    <tr><td>Bromhexine Hydrochloride</td><td>8 mg</td><td>Tablets</td></tr>
+                    <tr><td>Bromhexine Hydrochloride</td><td>2 mg/4 mg/5 ml</td><td>Syrup</td></tr>
+                    <tr><td>Methyl Prednisolone</td><td>4 mg, 8 mg</td><td>Tablets</td></tr>
+                </table>
+            </div>
+         </section>
+         <!-- services-area-end -->
+
+
+
+
+      </main>
+      <!-- main-area-end -->
+
+      <!-- footer-area -->
+      <footer>
+         <div class="footer-area tp-footer-white-content theme-bg pt-95">
+            <div class="tp-footer-top pb-25">
+               <div class="container">
+                  <div class="row" style="justify-content: space-between;">
+                     <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-1 mb-40 wow fadeInUp" data-wow-delay=".2s">
+                           <div class="tp-footer-widget__content mb-95">
+                              <i>FEEL FREE TO CONTACT US</i>
+                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">+918980662631</a></h4>
+                                
+                           </div>
+                           <div class="tp-footer-widget__sub-sec">
+                              <span class="tp-footer-widget__sub-title mb-5">Career</span>
+                              <p>Nam eget dui vel quam sodales semper quis porttitor <br> tortor. Vivamus quis ex nulla ...Nam eget dui vel quam <br> sodales semper quis porttitor tortor.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-2 mb-40 wow fadeInUp" data-wow-delay=".4s">
+                           <span class="tp-footer-widget__title mb-15">Useful links</span>
+                           <div class="tp-footer-widget__links mb-35">
+                              <ul>
+                                 <li><a href="contact.html">Contact us</a></li>
+                                 <li><a href="about.html">Help & About us</a></li>
+                              </ul>
+                           </div>
+                           
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-4 mb-40 wow fadeInUp" data-wow-delay=".8s">
+                           <span class="tp-footer-widget__title mb-15">Contact Info</span>
+                           <div class="tp-footer-widget__links mb-120">
+                              <ul>
+                                 <li>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </li>
+                                 <li><a href="tel:+918980662631">+918980662631</a></li>
+                                 <li><a href="mailto:  "> jenish@aksharavira.com <br> info@aksharavira.com </a></li>
+                                 <li>Office Hours: 8AM - 11PM</li>
+                                 <li>Sunday - Wekend Day</li>
+                              </ul>
+                           </div>
+                           <div class="tp-footer-widget__social fw-social">
+                              <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
+                              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              <a href="#"><i class="fa-light fa-basketball"></i></a>
+                               
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-area-bottom fw-border">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                        <div class="footer-widget__copyright copyright-white">
+                           <span>  © Copyright ©2025 <a href="index.html">Akshar Avira Pharma</a>. <i>All Rights Reserved Copyright</i></span>
+                        </div>
+                     </div> 
+                      
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- footer-area-end -->
+       <script>
+       document.getElementById("whatsappButton").addEventListener("click", function () {
+         const phoneNumber = "919876543210"; // Replace with your WhatsApp number (with country code)
+         window.open(`https://wa.me/${phoneNumber}`, "_blank");
+     });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let inquiryButton = document.getElementById("inquiryButton");
+    let inquiryModal = document.getElementById("inquiryModal");
+    let closeModal = document.querySelector(".close");
+
+    // Ensure modal is hidden initially
+    inquiryModal.style.display = "none";
+
+    // Open modal on button click
+    inquiryButton.addEventListener("click", function () {
+        inquiryModal.style.display = "flex";
+    });
+
+    // Close modal on clicking close button
+    closeModal.addEventListener("click", function () {
+        inquiryModal.style.display = "none";
+    });
+
+    // Close modal if clicking outside content
+    window.addEventListener("click", function (event) {
+        if (event.target === inquiryModal) {
+            inquiryModal.style.display = "none";
+        }
+    });
+});
+
+
+     </script>
+
+      <!-- JS here -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="assets/js/waypoints.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/swiper-bundle.js"></script>
+      <script src="assets/js/slick.js"></script>
+      <script src="assets/js/magnific-popup.js"></script>
+      <script src="assets/js/counterup.js"></script>
+      <script src="assets/js/wow.js"></script>
+      <script src="assets/js/isotope-pkgd.js"></script>
+      <script src="assets/js/imagesloaded-pkgd.js"></script>
+      <script src="assets/js/ajax-form.js"></script>
+      <script src="assets/js/aos.js"></script>
+      <script src="assets/js/nice-select.js"></script>
+      <script src="assets/js/meanmenu.js"></script>
+      <script src="assets/js/jquery.appear.js"></script>
+      <script src="assets/js/jquery.knob.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
+
+
+</html>

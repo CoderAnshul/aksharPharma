@@ -1,0 +1,776 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+   
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title> Akshar Avira Pharma</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+      <!-- CSS here -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/animate.css">
+      <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+      <link rel="stylesheet" href="assets/css/slick.css">
+      <link rel="stylesheet" href="assets/css/aos.css">
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+      <link rel="stylesheet" href="assets/css/flaticon.css">
+      <link rel="stylesheet" href="assets/css/nice-select.css">
+      <link rel="stylesheet" href="assets/css/spacing.css">
+      <link rel="stylesheet" href="assets/css/meanmenu.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="table.css">
+      <style>
+         .whatsapp-button {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.inquiry-button {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.inquiry-button img {
+    width: 35px;
+    height: 35px;
+}
+
+.inquiry-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group div {
+    flex: 1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.send-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.send-btn:hover {
+    background: #0056b3;
+}
+
+      </style>
+   </head>
+<div class="inquiry-button" id="inquiryButton">
+    <img src="./assets/img/icon/question.png" alt="Inquiry">
+</div>
+
+<div id="inquiryModal" class="modal">
+   <div class="modal-content">
+       <span class="close">&times;</span>
+       <h2>Product Inquiry</h2>
+       
+       <div class="input-group">
+           <div>
+               <label>Your Name *</label>
+               <input type="text" placeholder="Your name here">
+           </div>
+           <div>
+               <label>Your Email *</label>
+               <input type="email" placeholder="Your email here">
+           </div>
+       </div>
+
+       <div class="input-group">
+           <div>
+               <label>Your Contact *</label>
+               <input type="text" placeholder="e.g. (+91) 94288 88076">
+           </div>
+       </div>
+
+       <label>Message *</label>
+       <textarea placeholder="Tell us a few words"></textarea>
+
+       <button class="send-btn">SEND MESSAGE</button>
+   </div>
+</div>
+
+
+  
+   <div class="whatsapp-button" id="whatsappButton">
+      <img src="assets/img/whatsapp.png" alt="WhatsApp">
+  </div>
+   <body>
+      <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+      <!-- Scroll-top -->
+       
+      <!-- Scroll-top-end-->
+      
+      <!-- preloader -->
+      <div id="preloadertp">
+         <img src="assets/img/preloader.png" alt="">
+      </div>
+      <!-- preloader end  -->
+      <!-- header-area -->
+      <header class="d-none d-xl-block">
+         <div class="header-custom" id="header-sticky">
+            <div class="header-logo-box">
+               <a href="index.html"><img style="height:8vw; max-height:200px; min-height:140px; object-fit: contain;" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+            </div>
+            <div class="header-menu-box">
+               <div class="header-menu-top">
+                  <div class="row align-items-center">
+                     <div class="col-lg-4">
+                        <div class="header-top-mob">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg>
+                           <span>Help Desk :</span>
+                           <a href="tel:+9159008855"> +918980662631 </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-8">
+                        <div class="header-time">
+                           <span>info@aksharavira.com</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header-menu-bottom">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="main-menu main-menu-second">
+                           <nav id="mobile-menu">
+                              <ul>
+                                 <li><a class="active" href="index.html">Home</a>
+                                 </li>
+                                 <li class="has-dropdown"><a href="#">Services</a>
+                                    <ul class="sub-menu">
+                                       <li><a href="fdf.html"> Finished Dose Formulations (FDF)</a></li>
+                                       <li><a href="api.html">Active Pharmaceutical ingredients (APIs)</a></li>
+                                       <li><a href="herbal.html">Herbal Extracts</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="contact.html">Contact</a></li>
+                                 <li><a href="about.html">about</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                     <div class="col-lg-5" style="display:flex; justify-content: flex-end;align-items: center;">
+                        <div class="header-cart-order d-flex align-items-center justify-content-end">
+                           <div class="header-cart-list  d-flex align-items-center justify-content-end mr-50">
+                              <button class="tp-menu-toggle mr-40"><i class="fa-solid fa-list"></i></button>
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- header-area-end -->  
+      
+      <!-- tp-mobile-header-area start -->
+      <div id="header-mob-sticky" class="tp-mobile-header-area pt-15 pb-15 d-xl-none">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-4 col-10">
+                  <div class="tp-mob-logo">
+                     <a href="index.html">  <img style="height:10vw; object-fit: contain;width:fit-content" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+                  </div>
+               </div>
+               <div class="col-md-8 col-2">
+                  <div class="tp-mobile-bar d-flex align-items-center justify-content-end">
+                     <div class="tp-bt-btn-banner d-none d-md-block d-xl-none mr-30">
+                        <a class="tp-bt-btn" href="tel:123456">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg><span>Help Desk :</span>+918980662631
+                        </a>
+                     </div>
+                     <button class="tp-menu-toggle"><i class="far fa-bars"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- tp-mobile-header-area end -->
+      <div class="tpsideinfo tp-side-info-area">
+         <button class="tpsideinfo__close"><i class="fal fa-times"></i></button>
+         <div class="tpsideinfo__logo mb-40">
+            <a href="index.html"><img src="assets/img/logo/white-logo.png" alt="logo"></a>
+         </div>
+
+         <div class="mobile-menu"></div>
+
+         <div class="tpsideinfo__content mb-60">
+            <p class=" d-none d-xl-block">Our mission is to ensure the generation of accurate and precise findings.</p>
+            <span>Contact Us</span>
+            <a href="#"><i class="fa-solid fa-star"></i>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </a>
+            <a href="tel:61383766284"><i class="fa-solid fa-star"></i>+918980662631</a>
+         </div>
+         <div class="tpsideinfo__socialicon">
+             
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+         </div>
+      </div>
+      <!-- sidebar-info-end -->
+
+      <div class="body-overlay"></div>          
+      
+      <!-- main-area -->
+      <main>
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area pt-100 pb-120 breadcrumb__overlay" data-background="assets/img/banner/breadcrumb-01.jpg">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-lg-6 col-md-7 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">Active Pharmaceutical ingredients (APIs)</h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- services-area -->
+         <section class="services-area pt-120 pb-90 grey-bg" data-background="assets/img/shape/shape-bg-01.png">
+            <div class="table-container">
+               <div class="table-header">Oncology</div>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Abiraterone</td>
+                           <td>154229-18-2</td>
+                           <td>Fludarabine</td>
+                           <td>75607-67-9</td>
+                           <td>Cyclophosphamide</td>
+                           <td>50-18-0</td>
+                       </tr>
+                       <tr>
+                           <td>Octreotide</td>
+                           <td>83150-76-9</td>
+                           <td>Chlorambucil</td>
+                           <td>305-03-3</td>
+                           <td>Gefitinib</td>
+                           <td>184475-35-2</td>
+                       </tr>
+                       <tr>
+                           <td>Thalidomide</td>
+                           <td>50-35-1</td>
+                           <td>Temozolomide</td>
+                           <td>85622-93-1</td>
+                           <td>Erlotinib</td>
+                           <td>183321-74-6</td>
+                       </tr>
+                       <tr>
+                           <td>Lenalidomide</td>
+                           <td>191732-72-6</td>
+                           <td>Everolimus</td>
+                           <td>159351-69-6</td>
+                           <td>Imatinib</td>
+                           <td>152459-95-5</td>
+                       </tr>
+                       <tr>
+                           <td>Aprepitant</td>
+                           <td>170729-80-3</td>
+                           <td>Anastrozole</td>
+                           <td>120511-73-1</td>
+                           <td>Paclitaxel</td>
+                           <td>33069-62-4</td>
+                       </tr>
+                       <tr>
+                           <td>Bortezomib</td>
+                           <td>179324-69-7</td>
+                           <td>Docetaxel</td>
+                           <td>114977-28-5</td>
+                           <td>Letrozole</td>
+                           <td>112809-51-5</td>
+                       </tr>
+                       <tr>
+                           <td>Fulvestrant</td>
+                           <td>129453-61-8</td>
+                           <td>Pemetrexed</td>
+                           <td>137281-23-3</td>
+                           <td>Leuprolide</td>
+                           <td>74381-53-6</td>
+                       </tr>
+                       <tr>
+                           <td>Pomalidomide</td>
+                           <td>19171-19-8</td>
+                           <td>Gemcitabine</td>
+                           <td>95058-81-4</td>
+                           <td>Exemestane</td>
+                           <td>107868-30-4</td>
+                       </tr>
+                       <tr>
+                           <td>Bicalutamide</td>
+                           <td>90357-06-5</td>
+                           <td>Flutamide</td>
+                           <td>13311-84-7</td>
+                           <td>Fosaprepitant</td>
+                           <td>172673-20-0</td>
+                       </tr>
+                   </tbody>
+               </table>
+       
+               
+           </div>
+           <div class="table-container">
+               <div class="table-header">Immunosuppressives</div>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Mycophenolate sodium</td>
+                           <td>37415-62-6</td>
+                           <td>Azathioprine</td>
+                           <td>446-86-6</td>
+                           <td>Mycophenolate Mofetil</td>
+                           <td>128794-94-5</td>
+                       </tr>
+                       <tr>
+                           <td>Leflunomide</td>
+                           <td>75706-12-6</td>
+                           <td>Sirolimus</td>
+                           <td>53123-88-9</td>
+                           <td>Everolimus</td>
+                           <td>159351-69-6</td>
+                       </tr>
+                       <tr>
+                           <td>Cyclosporin</td>
+                           <td>59865-13-3</td>
+                           <td>Tacrolimus</td>
+                           <td>104987-11-3</td>
+                           <td>Temsirolimus</td>
+                           <td>162635-04-3</td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           
+           <div class="table-container">
+               <div class="table-header">Anti-virals</div>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Emtricitabine</td>
+                           <td>143491-57-0</td>
+                           <td>Oseltamivir</td>
+                           <td>196618-13-0</td>
+                           <td>Entecavir</td>
+                           <td>142217-69-4</td>
+                       </tr>
+                       <tr>
+                           <td>Tenofovir Disoproxil Fumarate</td>
+                           <td>147127-20-6</td>
+                           <td>Atazanavir</td>
+                           <td>198904-31-3</td>
+                           <td>Ritonavir</td>
+                           <td>155213-67-5</td>
+                       </tr>
+                       <tr>
+                           <td>Lamivudine</td>
+                           <td>134678-17-4</td>
+                           <td>Stavudine</td>
+                           <td>3056-17-5</td>
+                           <td>Didanosine</td>
+                           <td>69655-05-6</td>
+                       </tr>
+                       <tr>
+                           <td>Zidovudine</td>
+                           <td>30516-87-1</td>
+                           <td>Nevirapine</td>
+                           <td>129618-40-2</td>
+                           <td>Abacavir</td>
+                           <td>136470-78-5</td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           
+           <div class="table-container">
+               <div class="table-header">Anti-tuberculosis</div>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Isoniazide</td>
+                           <td>54-85-3</td>
+                           <td>Rifampicin</td>
+                           <td>13292-46-1</td>
+                           <td>Ethionamide</td>
+                           <td>536-33-4</td>
+                       </tr>
+                       <tr>
+                           <td>Ethambutol</td>
+                           <td>74-55-5</td>
+                           <td>Pyrazinamide</td>
+                           <td>98-96-4</td>
+                           <td>Rifabutin</td>
+                           <td>72559-06-9</td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           
+           <div class="table-container">
+               <div class="table-header">Biological API</div>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                           <th>API</th>
+                           <th>CAS No.</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Octreotide</td>
+                           <td>83150-76-9</td>
+                           <td>Lanreotide</td>
+                           <td>108736-35-2</td>
+                           <td>Bivalirudin</td>
+                           <td>128270-60-0</td>
+                       </tr>
+                       <tr>
+                           <td>Terlipressin</td>
+                           <td>14636-12-5</td>
+                           <td>Liraglutide</td>
+                           <td>204656-20-2</td>
+                           <td>Thymosin</td>
+                           <td>α162304-98-7</td>
+                       </tr>
+                       <tr>
+                           <td>Recomb. Human Insulin</td>
+                           <td>-</td>
+                           <td>Recomb Insulin Aspart</td>
+                           <td>-</td>
+                           <td>Recomb Insulin Glargine</td>
+                           <td>-</td>
+                       </tr>
+                       <tr>
+                           <td>Goserelin</td>
+                           <td>65807-02-5</td>
+                           <td>Desmopressin</td>
+                           <td>16679-58-6</td>
+                           <td>Cetrorelix</td>
+                           <td>120287-85-6</td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           <div class="table-container">
+               <div class="table-header">Vitamins</div>
+               <table>
+                   <tbody>
+                       <tr>
+                           <td>Vitamin A (Retinol)</td>
+                           <td>Vitamin C</td>
+                           <td>Vitamin K</td>
+                       </tr>
+                       <tr>
+                           <td>Vitamin B1</td>
+                           <td>Vitamin D</td>
+                           <td>Vitamin B12</td>
+                       </tr>
+                       <tr>
+                           <td>Vitamin B6</td>
+                           <td>Vitamin E</td>
+                           <td></td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+           
+           <div class="table-container">
+               <div class="table-header">Pellets (Entric coated, sustained release, Immediate release)</div>
+               <table>
+                   <tbody>
+                       <tr>
+                           <td>Omeprazole pellets</td>
+                           <td>Rabeprazole pellets</td>
+                           <td>Lansoprazole pellets</td>
+                       </tr>
+                       <tr>
+                           <td>Itraconazole pellets</td>
+                           <td>Pantoprazole pellets</td>
+                           <td>Esomeprazole pellets</td>
+                       </tr>
+                       <tr>
+                           <td>Doxycycline Hyclate pellets</td>
+                           <td>Duloxetine Pellets</td>
+                           <td></td>
+                       </tr>
+                   </tbody>
+               </table>
+           </div>
+         </section>
+         <!-- services-area-end -->
+
+
+
+
+      </main>
+      <!-- main-area-end -->
+
+      <!-- footer-area -->
+      <footer>
+         <div class="footer-area tp-footer-white-content theme-bg pt-95">
+            <div class="tp-footer-top pb-25">
+               <div class="container">
+                  <div class="row" style="justify-content: space-between;">
+                     <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-1 mb-40 wow fadeInUp" data-wow-delay=".2s">
+                           <div class="tp-footer-widget__content mb-95">
+                              <i>FEEL FREE TO CONTACT US</i>
+                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">+918980662631</a></h4>
+                                
+                           </div>
+                           <div class="tp-footer-widget__sub-sec">
+                              <span class="tp-footer-widget__sub-title mb-5">Career</span>
+                              <p>Nam eget dui vel quam sodales semper quis porttitor <br> tortor. Vivamus quis ex nulla ...Nam eget dui vel quam <br> sodales semper quis porttitor tortor.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-2 mb-40 wow fadeInUp" data-wow-delay=".4s">
+                           <span class="tp-footer-widget__title mb-15">Useful links</span>
+                           <div class="tp-footer-widget__links mb-35">
+                              <ul>
+                                 <li><a href="contact.html">Contact us</a></li>
+                                 <li><a href="about.html">Help & About us</a></li>
+                              </ul>
+                           </div>
+                           
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-4 mb-40 wow fadeInUp" data-wow-delay=".8s">
+                           <span class="tp-footer-widget__title mb-15">Contact Info</span>
+                           <div class="tp-footer-widget__links mb-120">
+                              <ul>
+                                 <li>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </li>
+                                 <li><a href="tel:+918980662631">+918980662631</a></li>
+                                 <li><a href="mailto:  "> jenish@aksharavira.com <br> info@aksharavira.com </a></li>
+                                 <li>Office Hours: 8AM - 11PM</li>
+                                 <li>Sunday - Wekend Day</li>
+                              </ul>
+                           </div>
+                           <div class="tp-footer-widget__social fw-social">
+                              <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
+                              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              <a href="#"><i class="fa-light fa-basketball"></i></a>
+                               
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-area-bottom fw-border">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                        <div class="footer-widget__copyright copyright-white">
+                           <span>  © Copyright ©2025 <a href="index.html">Akshar Avira Pharma</a>. <i>All Rights Reserved Copyright</i></span>
+                        </div>
+                     </div> 
+                      
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- footer-area-end -->
+       <script>
+       document.getElementById("whatsappButton").addEventListener("click", function () {
+         const phoneNumber = "919876543210"; // Replace with your WhatsApp number (with country code)
+         window.open(`https://wa.me/${phoneNumber}`, "_blank");
+     });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let inquiryButton = document.getElementById("inquiryButton");
+    let inquiryModal = document.getElementById("inquiryModal");
+    let closeModal = document.querySelector(".close");
+
+    // Ensure modal is hidden initially
+    inquiryModal.style.display = "none";
+
+    // Open modal on button click
+    inquiryButton.addEventListener("click", function () {
+        inquiryModal.style.display = "flex";
+    });
+
+    // Close modal on clicking close button
+    closeModal.addEventListener("click", function () {
+        inquiryModal.style.display = "none";
+    });
+
+    // Close modal if clicking outside content
+    window.addEventListener("click", function (event) {
+        if (event.target === inquiryModal) {
+            inquiryModal.style.display = "none";
+        }
+    });
+});
+
+
+
+     
+     </script>
+
+      <!-- JS here -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="assets/js/waypoints.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/swiper-bundle.js"></script>
+      <script src="assets/js/slick.js"></script>
+      <script src="assets/js/magnific-popup.js"></script>
+      <script src="assets/js/counterup.js"></script>
+      <script src="assets/js/wow.js"></script>
+      <script src="assets/js/isotope-pkgd.js"></script>
+      <script src="assets/js/imagesloaded-pkgd.js"></script>
+      <script src="assets/js/ajax-form.js"></script>
+      <script src="assets/js/aos.js"></script>
+      <script src="assets/js/nice-select.js"></script>
+      <script src="assets/js/meanmenu.js"></script>
+      <script src="assets/js/jquery.appear.js"></script>
+      <script src="assets/js/jquery.knob.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
+
+
+</html>

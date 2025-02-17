@@ -1,0 +1,1645 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+   
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title> Akshar Avira Pharma</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+      <!-- CSS here -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/animate.css">
+      <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+      <link rel="stylesheet" href="assets/css/slick.css">
+      <link rel="stylesheet" href="assets/css/aos.css">
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+      <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+      <link rel="stylesheet" href="assets/css/flaticon.css">
+      <link rel="stylesheet" href="assets/css/nice-select.css">
+      <link rel="stylesheet" href="assets/css/spacing.css">
+      <link rel="stylesheet" href="assets/css/meanmenu.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="table.css">
+      <style>
+        .whatsapp-button {
+   position: fixed;
+   bottom: 40px;
+   right: 20px;
+   width: 60px;
+   height: 60px;
+   background-color: #25D366;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   z-index: 1000;
+}
+
+.whatsapp-button img {
+   width: 35px;
+   height: 35px;
+}
+
+.whatsapp-button:hover {
+   transform: scale(1.1);
+   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+.inquiry-button {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.inquiry-button img {
+    width: 35px;
+    height: 35px;
+}
+
+.inquiry-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group div {
+    flex: 1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.send-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.send-btn:hover {
+    background: #0056b3;
+}
+     </style>
+   </head>
+   <div class="inquiry-button" id="inquiryButton">
+    <img src="./assets/img/icon/question.png" alt="Inquiry">
+</div>
+
+<div id="inquiryModal" class="modal">
+   <div class="modal-content">
+       <span class="close">&times;</span>
+       <h2>Product Inquiry</h2>
+       
+       <div class="input-group">
+           <div>
+               <label>Your Name *</label>
+               <input type="text" placeholder="Your name here">
+           </div>
+           <div>
+               <label>Your Email *</label>
+               <input type="email" placeholder="Your email here">
+           </div>
+       </div>
+
+       <div class="input-group">
+           <div>
+               <label>Your Contact *</label>
+               <input type="text" placeholder="e.g. (+91) 94288 88076">
+           </div>
+       </div>
+
+       <label>Message *</label>
+       <textarea placeholder="Tell us a few words"></textarea>
+
+       <button class="send-btn">SEND MESSAGE</button>
+   </div>
+</div>
+
+   <div class="whatsapp-button" id="whatsappButton">
+    <img src="assets/img/whatsapp.png" alt="WhatsApp">
+</div>
+   <body>
+      <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+      <!-- Scroll-top -->
+       
+      <!-- Scroll-top-end-->
+      
+      <!-- preloader -->
+      <div id="preloadertp">
+         <img src="assets/img/preloader.png" alt="">
+      </div>
+      <!-- preloader end  -->
+      <!-- header-area -->
+      <header class="d-none d-xl-block">
+         <div class="header-custom" id="header-sticky">
+            <div class="header-logo-box">
+               <a href="index.html"><img style="height:8vw; max-height:200px; min-height:140px; object-fit: contain;" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+            </div>
+            <div class="header-menu-box">
+               <div class="header-menu-top">
+                  <div class="row align-items-center">
+                     <div class="col-lg-4">
+                        <div class="header-top-mob">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg>
+                           <span>Help Desk :</span>
+                           <a href="tel:+9159008855"> +918980662631 </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-8">
+                        <div class="header-time">
+                           <span>info@aksharavira.com</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header-menu-bottom">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="main-menu main-menu-second">
+                           <nav id="mobile-menu">
+                              <ul>
+                                 <li><a class="active" href="index.html">Home</a>
+                                 </li>
+                                 <li class="has-dropdown"><a href="#">Services</a>
+                                    <ul class="sub-menu">
+                                       <li><a href="fdf.html"> Finished Dose Formulations (FDF)</a></li>
+                                       <li><a href="api.html">Active Pharmaceutical ingredients (APIs)</a></li>
+                                       <li><a href="herbal.html">Herbal Extracts</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="contact.html">Contact</a></li>
+                                 <li><a href="about.html">about</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                     <div class="col-lg-5" style="display:flex; justify-content: flex-end;align-items: center;">
+                        <div class="header-cart-order d-flex align-items-center justify-content-end">
+                           <div class="header-cart-list  d-flex align-items-center justify-content-end mr-50">
+                              <button class="tp-menu-toggle mr-40"><i class="fa-solid fa-list"></i></button>
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- header-area-end -->  
+      
+      <!-- tp-mobile-header-area start -->
+      <div id="header-mob-sticky" class="tp-mobile-header-area pt-15 pb-15 d-xl-none">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-4 col-10">
+                  <div class="tp-mob-logo">
+                     <a href="index.html">  <img style="height:10vw; object-fit: contain;width:fit-content" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+                  </div>
+               </div>
+               <div class="col-md-8 col-2">
+                  <div class="tp-mobile-bar d-flex align-items-center justify-content-end">
+                     <div class="tp-bt-btn-banner d-none d-md-block d-xl-none mr-30">
+                        <a class="tp-bt-btn" href="tel:123456">
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg><span>Help Desk :</span>+918980662631
+                        </a>
+                     </div>
+                     <button class="tp-menu-toggle"><i class="far fa-bars"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- tp-mobile-header-area end -->
+      <div class="tpsideinfo tp-side-info-area">
+         <button class="tpsideinfo__close"><i class="fal fa-times"></i></button>
+         <div class="tpsideinfo__logo mb-40">
+            <a href="index.html"><img src="assets/img/logo/white-logo.png" alt="logo"></a>
+         </div>
+
+         <div class="mobile-menu"></div>
+
+         <div class="tpsideinfo__content mb-60">
+            <p class=" d-none d-xl-block">Our mission is to ensure the generation of accurate and precise findings.</p>
+            <span>Contact Us</span>
+            <a href="#"><i class="fa-solid fa-star"></i>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </a>
+            <a href="tel:61383766284"><i class="fa-solid fa-star"></i>+918980662631</a>
+         </div>
+         <div class="tpsideinfo__socialicon">
+             
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+         </div>
+      </div>
+      <!-- sidebar-info-end -->
+
+      <div class="body-overlay"></div>          
+      
+      <!-- main-area -->
+      <main>
+
+         <!-- breadcrumb-area -->
+         <section class="breadcrumb__area pt-100 pb-120 breadcrumb__overlay" data-background="assets/img/banner/breadcrumb-01.jpg">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-lg-6 col-md-7 col-12">
+                     <div class="tp-breadcrumb">
+                        <h2 class="tp-breadcrumb__title">Herbal Extracts</h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- breadcrumb-area-end -->
+
+         <!-- services-area -->
+         <section class="services-area pt-120 pb-90 grey-bg" data-background="assets/img/shape/shape-bg-01.png">
+            <div class="table-container">
+                <div class="table-header">Botanical Ingredients List</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Botanical Name</th>
+                            <th>Common Name</th>
+                            <th>Specifications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Abies webbiana leaf</td>
+                            <td>Talispatra</td>
+                            <td>Alkaloids>0.5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Abroma augusta root</td>
+                            <td>Ulatkambal</td>
+                            <td>Alkaloids 0.15% Tannins 2.4%-4%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Abrus precatorius seed</td>
+                            <td>Gunja</td>
+                            <td>Glycosides 15% Alkaloids 1%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Abotion indicum seed</td>
+                            <td>Kankati</td>
+                            <td>Mucilage 10%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Acacia arabica bark</td>
+                            <td>Babul</td>
+                            <td>Tannins 40%</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Acacia catechu</td>
+                            <td>Khadir</td>
+                            <td>Tannins 50% Catechins 20%</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Acacia concinna pod</td>
+                            <td>Shikakai</td>
+                            <td>Saponins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Achilea millefolium seed</td>
+                            <td>Gandana</td>
+                            <td>Bitters 3%</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Achyranthes aspere plant</td>
+                            <td>Apamarga</td>
+                            <td>Saponins 3%</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Aconitum heterophyllum plant</td>
+                            <td>Atis</td>
+                            <td>Alkaloids 1%-1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Aconitum spp. Root</td>
+                            <td>Bachnag</td>
+                            <td>Alkaloids 10%</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Acorus calamus shizome</td>
+                            <td>Bach</td>
+                            <td>Glycosides 10%</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Adhatoda vasica leaf</td>
+                            <td>Adulsa</td>
+                            <td>Alkaloids 0.5%-2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Aegle marmelos unripe fruit</td>
+                            <td>Bael</td>
+                            <td>Tannins 5% Mucilage 10%-15%</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Albizzia lebbeck bark</td>
+                            <td>Siris</td>
+                            <td>Tannins 15%</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Allium cepa bulb</td>
+                            <td>Onions</td>
+                            <td>Quercetin 5%</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Allium sativum bulb</td>
+                            <td>Garlic</td>
+                            <td>Allin 0.5%-2.5% by HPLC</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Aloe vera leaf</td>
+                            <td>Ghrita kumari Anticancer</td>
+                            <td>Aloin 1.5% (3:1) 50% (200:1)</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Alpinia galanga rhizome</td>
+                            <td>Khulanjan</td>
+                            <td>Shagaol>4% by HPLC</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Alstonia scholaris bark</td>
+                            <td>Saptaparna</td>
+                            <td>Alkaloids 0.3%</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Anacyclus pyrethrum flower</td>
+                            <td>Akarkara</td>
+                            <td>Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Andrographis pariculata plant</td>
+                            <td>Kalmegh</td>
+                            <td>Andrographolides > 10%</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>Anethum sowa seed</td>
+                            <td>Suwa</td>
+                            <td>Vol. oil 3%</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>Aphanamixis rohituka bark</td>
+                            <td>Rohitika</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>Apium graveolens seed</td>
+                            <td>Ajmod</td>
+                            <td>Vol. Oil 5%</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>Argyreia speciosa root</td>
+                            <td>Samudra palak</td>
+                            <td>Resin 4.5%</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>Asparagus racemosus root</td>
+                            <td>Safed musli</td>
+                            <td>Saponins > 10%</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>Asparagus racemosus root</td>
+                            <td>Shatavari</td>
+                            <td>Saponins > 15%</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>Asphaltum</td>
+                            <td>Shilajit</td>
+                            <td>Fulvic Acid & TLC for Benzopyrones</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>Asteracantha longifolia herb</td>
+                            <td>Kuliakhara</td>
+                            <td>Alkaloids 0.35%</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>Atrepa belladonna leaf</td>
+                            <td>Angurshefa</td>
+                            <td>Alkaloids 0.95%-1.6%</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>Atropa belladonna root</td>
+                            <td>Angurshefa</td>
+                            <td>Alkaloids 3%</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>Azadirachta indica bark</td>
+                            <td>Neem</td>
+                            <td>Bitters 1%</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td>Bacopa mannieri herb</td>
+                            <td>Nir brahmi</td>
+                            <td>Bacosides 15%-50% Alkaloids &lt;0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>Bauhinia prionitis herb</td>
+                            <td>Vajradanti</td>
+                            <td>Tannins 5% Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>Barberis aristata root</td>
+                            <td>Daru haridra</td>
+                            <td>Berberine &gt; 8%</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>Bauhinia variegata bark</td>
+                            <td>Kachnar</td>
+                            <td>Tannins 25%</td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td>Bergenia ligulata root</td>
+                            <td>Pashanbheda</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td>Boerhaavia diffusa root</td>
+                            <td>Punarnava</td>
+                            <td>Alkaloids 0.01%-0.08%</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>Boswellia serrata gum</td>
+                            <td>Shallaki</td>
+                            <td>Boswellic acids &gt; 60-85%</td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td>Butesa frondosa flower</td>
+                            <td>Palas</td>
+                            <td>Glycosides &gt; 8%</td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td>Caesilpinia botducella nut</td>
+                            <td>Fevernut</td>
+                            <td>Bonducin 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td>Calotropis gigantean root</td>
+                            <td>Aak</td>
+                            <td>Alkaloids 0.3%</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>Capsicum spp. Fruit</td>
+                            <td>Lalmirch</td>
+                            <td>Capsaicin &gt;3%</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>Camelia sinesis leaf</td>
+                            <td>Green Tea</td>
+                            <td>Eggc 25% &amp; Polyphenol &gt; 55%</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td>Capparis spinosa root</td>
+                            <td>Kabra</td>
+                            <td>Glycosides 15%</td>
+                        </tr>
+                        <tr>
+                            <td>47</td>
+                            <td>Cassia augustifolia leaf</td>
+                            <td>Senna</td>
+                            <td>Sennosides 10%</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>Cassia fistula fruit</td>
+                            <td>Amatas</td>
+                            <td>Oxymethyl-anthra Quinines 1.2%</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>Cassia occidentalis fruit</td>
+                            <td>Kasondi</td>
+                            <td>Oxymethyl-anthrax Quinines 1.2%</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>Cedrus deodara wood</td>
+                            <td>Deodar</td>
+                            <td>Vol. oil 1%</td>
+                        </tr>
+                        <tr>
+                            <td>51</td>
+                            <td>Celastrus paniculatus seed</td>
+                            <td>Malkangni</td>
+                            <td>Alkaloids 0.1%</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>Centella asiatica herb</td>
+                            <td>Mandukaparni</td>
+                            <td>Asiaticosides >10% Asiatic acid 2%</td>
+                        </tr>
+                        <tr>
+                            <td>53</td>
+                            <td>Cephaelis ipecacuanha root</td>
+                            <td>Ipecac</td>
+                            <td>Alkaloids 1%</td>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td>Cephalandra indica leaf</td>
+                            <td>Bimba</td>
+                            <td>Resin 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td>Cicer arietinum seed</td>
+                            <td>Chana</td>
+                            <td>Protein 15%</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>Cichorium intybus seed</td>
+                            <td>Kasni</td>
+                            <td>Bitters >1%</td>
+                        </tr>
+                        <tr>
+                            <td>57</td>
+                            <td>Cinchona ledgeriana bark</td>
+                            <td>Cinchona</td>
+                            <td>Alkaloids 4%</td>
+                        </tr>
+                        <tr>
+                            <td>58</td>
+                            <td>Cissus quadrangularis stem</td>
+                            <td>Hadjora</td>
+                            <td>Ketosterones >5%</td>
+                        </tr>
+                        <tr>
+                            <td>59</td>
+                            <td>Citrullus colocynthis fruit</td>
+                            <td>Indrayan</td>
+                            <td>Bitters 4.5%</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>Citrullus colocynthis root</td>
+                            <td>Indrayan</td>
+                            <td>Bitters 5%</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>Citrus aurantium peel</td>
+                            <td>Common orange</td>
+                            <td>Flavons > 4% Vol.oil 1%</td>
+                        </tr>
+                        <tr>
+                            <td>62</td>
+                            <td>Citrus medica peel</td>
+                            <td>Bijaura / Citron</td>
+                            <td>Acidity as Citric acid 2%, Flavons 5%</td>
+                        </tr>
+                        <tr>
+                            <td>63</td>
+                            <td>Colchicum luteum corms</td>
+                            <td>Suranjane</td>
+                            <td>Alkaloids > 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>Coleus forskohlii root</td>
+                            <td>Coleus</td>
+                            <td>Forskolin > 2.5%, 10% - 40% by HPLC</td>
+                        </tr>
+                        <tr>
+                            <td>65</td>
+                            <td>Commiphora mukul gum</td>
+                            <td>Guggul</td>
+                            <td>Guggul Sterones 2.50%</td>
+                        </tr>
+                        <tr>
+                            <td>66</td>
+                            <td>Commiphora myrrha gum</td>
+                            <td>Myrrh</td>
+                            <td>Organic Acid 5%</td>
+                        </tr>
+                        <tr>
+                            <td>67</td>
+                            <td>Coriandrum sativum seed</td>
+                            <td>Dhania</td>
+                            <td>Vol.oil 1%</td>
+                        </tr>
+                        <tr>
+                            <td>68</td>
+                            <td>Crataeva nurvala bark</td>
+                            <td>Varuna</td>
+                            <td>Saponin > 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>69</td>
+                            <td>Cucumis sativus seed</td>
+                            <td>Khira</td>
+                            <td>Mucilage 24%</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>Cuminum cyminum fruit</td>
+                            <td>Zeera</td>
+                            <td>Vol.oil 1.0%</td>
+                        </tr>
+                        <tr>
+                            <td>71</td>
+                            <td>Curcuma amada rhizome</td>
+                            <td>Amba</td>
+                            <td>Vol.oil 1.0%</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>Curcuma longa rhizome</td>
+                            <td>Turmeric</td>
+                            <td>Vol.oil > 10% Curcumin 5-10%</td>
+                        </tr>
+                        <tr>
+                            <td>73</td>
+                            <td>Curculigo orchioides root</td>
+                            <td>Kali musli</td>
+                            <td>Saponin 20% Mucilage 30%</td>
+                        </tr>
+                        <tr>
+                            <td>74</td>
+                            <td>Cynodon dactylon herb</td>
+                            <td>Dhub</td>
+                            <td>Tanins 5% Alkaloides + ve</td>
+                        </tr>
+                        <tr>
+                            <td>75</td>
+                            <td>Cyperus scariosus root</td>
+                            <td>Nagarmotha</td>
+                            <td>Alkaloides 0.15% - 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>76</td>
+                            <td>Dashmool</td>
+                            <td>Combination</td>
+                            <td>Tannins 2%</td>
+                        </tr>
+                        <tr>
+                            <td>77</td>
+                            <td>DGL</td>
+                            <td>Liquorice</td>
+                            <td>Flavones 1% Glycyrrhizin &lt; 3%</td>
+                        </tr>
+                        <tr>
+                            <td>78</td>
+                            <td>Datura stramonium leaf</td>
+                            <td>Dhatua</td>
+                            <td>Alkaloides 0.5% - 0.7%</td>
+                        </tr>
+                        <tr>
+                            <td>79</td>
+                            <td>Daucus carota seed</td>
+                            <td>Carrot</td>
+                            <td>Alkaloides 0.4% Flavones 5%</td>
+                        </tr>
+                        <tr>
+                            <td>80</td>
+                            <td>Dolichos biflorus seed</td>
+                            <td>Kulthi</td>
+                            <td>Saponins 20%</td>
+                        </tr>
+                        <tr>
+                            <td>81</td>
+                            <td>Eclipta alba plant</td>
+                            <td>Bhringraj</td>
+                            <td>Nor-wedelolactone &gt; 3%</td>
+                        </tr>
+                        <tr>
+                            <td>82</td>
+                            <td>Embelica ribes seed</td>
+                            <td>Vidanga</td>
+                            <td>Tannins 1% Embelin 1%</td>
+                        </tr>
+                        <tr>
+                            <td>83</td>
+                            <td>Embelica officinalis fruit</td>
+                            <td>Amla</td>
+                            <td>Tannins &gt; 20% Elagic acid &gt; 5%</td>
+                        </tr>
+                        <tr>
+                            <td>84</td>
+                            <td>Enicostemma littorale herb</td>
+                            <td>Mamijava</td>
+                            <td>Bitters 4%</td>
+                        </tr>
+                        <tr>
+                            <td>85</td>
+                            <td>Ephedra vulgaris herb</td>
+                            <td>Somlata</td>
+                            <td>Alkaloids 0.2% - 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>86</td>
+                            <td>Eugenia jambulana seed</td>
+                            <td>Jamun</td>
+                            <td>Saponins 4%</td>
+                        </tr>
+                        <tr>
+                            <td>87</td>
+                            <td>Euphorbia hirta herb</td>
+                            <td>Dudhi</td>
+                            <td>Flavons &gt; 6%</td>
+                        </tr>
+                        <tr>
+                            <td>88</td>
+                            <td>Evolvulus alsinoides plant</td>
+                            <td>Sankhapushpi</td>
+                            <td>Bitters &gt; 2.55</td>
+                        </tr>
+                        <tr>
+                            <td>89</td>
+                            <td>Ferula foetida resin</td>
+                            <td>Hing</td>
+                            <td>Vol.oil 1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td>Ficus racemosa leaf</td>
+                            <td>Gular</td>
+                            <td>Tannins 5%</td>
+                        </tr>
+                        <tr>
+                            <td>91</td>
+                            <td>Ficus racemosa bark</td>
+                            <td>Gular</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>92</td>
+                            <td>Foeniculum vulgare fruit</td>
+                            <td>Saunf</td>
+                            <td>Vol.oil. 1%</td>
+                        </tr>
+                        <tr>
+                            <td>93</td>
+                            <td>Fumaria officinalis herb</td>
+                            <td>Pit papara</td>
+                            <td>Bitters &gt; 1%</td>
+                        </tr>
+                        <tr>
+                            <td>94</td>
+                            <td>Garcinia cambogia rind</td>
+                            <td>Vilayti imli</td>
+                            <td>HCA 50% by HPLC</td>
+                        </tr>
+                        <tr>
+                            <td>95</td>
+                            <td>Glycyrrhiza glabra root</td>
+                            <td>Jethimadhu</td>
+                            <td>Glycyrrhizin by Garratt method &gt; 15% / 24%</td>
+                        </tr>
+                        <tr>
+                            <td>96</td>
+                            <td>Gossypium herbaceum root</td>
+                            <td>Kapas/ Cotton</td>
+                            <td>Alkaloids 0.4% Flavones 1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>97</td>
+                            <td>Gymnema sylvestere leaf</td>
+                            <td>Gudmar</td>
+                            <td>Gymnemic acids 25%-75%</td>
+                        </tr>
+                        <tr>
+                            <td>98</td>
+                            <td>Hemidesmus indicus root</td>
+                            <td>Anantmul</td>
+                            <td>Saponins 7.5%</td>
+                        </tr>
+                        <tr>
+                            <td>99</td>
+                            <td>Holarrhena antidysenterica seed</td>
+                            <td>Indrajav Febrifuge</td>
+                            <td>Alkaloids 3%</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>Holarrhena antidysenterica bark</td>
+                            <td>Kurchi</td>
+                            <td>Alkaloids &gt; 4%</td>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Hydrasitis Indian root</td>
+                            <td>Golden seal</td>
+                            <td>Hydrastin 1%</td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Hyoscyamus niger herb</td>
+                            <td>Khorasani Ajowain</td>
+                            <td>Alkaloids 0.28%-0.3%</td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>Indigofera tinctoria plant</td>
+                            <td>Neel</td>
+                            <td>Saponins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>Inula raremosa root</td>
+                            <td>Pushkarmool</td>
+                            <td>Alantolactone 2.5% by HOLC</td>
+                        </tr>
+                        <tr>
+                            <td>105</td>
+                            <td>Juglans regia bark</td>
+                            <td>Akhrot</td>
+                            <td>Tannins 12%</td>
+                        </tr>
+                        <tr>
+                            <td>106</td>
+                            <td>Lawsonia alba leaf</td>
+                            <td>Henna</td>
+                            <td>Tannins &gt;5%</td>
+                        </tr>
+                        <tr>
+                            <td>107</td>
+                            <td>Leptadenia reticulata herb</td>
+                            <td>Jivanti</td>
+                            <td>Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>108</td>
+                            <td>Lobelia nicotiaeafolia leaf</td>
+                            <td>Lobelia</td>
+                            <td>Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>109</td>
+                            <td>Mangifera indica bark</td>
+                            <td>Mango/Amra</td>
+                            <td>Tannins 20%</td>
+                        </tr>
+                        <tr>
+                            <td>110</td>
+                            <td>Mantricaria chamomila flower</td>
+                            <td>Chamomile</td>
+                            <td>Vol.oil 1%</td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>Mentha spicata herb</td>
+                            <td>Pudina</td>
+                            <td>Flavones &gt; 2%</td>
+                        </tr>
+                        <tr>
+                            <td>112</td>
+                            <td>Mesua ferrea fruit & flower bub</td>
+                            <td>Nagkesar</td>
+                            <td>Bitters &gt; 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>113</td>
+                            <td>Mimusops elengi bark</td>
+                            <td>Bakul</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>114</td>
+                            <td>Momordica charantia fruit</td>
+                            <td>Karela</td>
+                            <td>Bitters 2.5%-10%</td>
+                        </tr>
+                        <tr>
+                            <td>115</td>
+                            <td>Morinda citrifolia fruit</td>
+                            <td>Noni</td>
+                            <td>Morindin 15%</td>
+                        </tr>
+                        <tr>
+                            <td>116</td>
+                            <td>Moringa oleifera bark</td>
+                            <td>Soanjina</td>
+                            <td>Glycosides &gt; 5%</td>
+                        </tr>
+                        <tr>
+                            <td>117</td>
+                            <td>Moringa oleifera leaf</td>
+                            <td>Soanjina</td>
+                            <td>Alkaloids 0.1%</td>
+                        </tr>
+                        <tr>
+                            <td>118</td>
+                            <td>Mucuna pruriens seed</td>
+                            <td>Kawanch</td>
+                            <td>L-Dopa by IP Method &gt; 15%</td>
+                        </tr>
+                        <tr>
+                            <td>119</td>
+                            <td>Myrica nagi bark</td>
+                            <td>Kaiphal</td>
+                            <td>Tannins 5%</td>
+                        </tr>
+                        <tr>
+                            <td>120</td>
+                            <td>Myristica fragrans fruit</td>
+                            <td>Jaiphal</td>
+                            <td>Vol.oil 4%</td>
+                        </tr>
+                        <tr>
+                            <td>120</td>
+                            <td>Myristica fragrans fruit</td>
+                            <td>Jaiphal</td>
+                            <td>Vol.oil 4%</td>
+                        </tr>
+                        <tr>
+                            <td>121</td>
+                            <td>Nardoatachys jatamansi root</td>
+                            <td>Jatamansi</td>
+                            <td>Vol.oil 0.1%-0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>122</td>
+                            <td>Nelumbo nucifera seed</td>
+                            <td>Kamala</td>
+                            <td>Saponins 30%</td>
+                        </tr>
+                        <tr>
+                            <td>123</td>
+                            <td>Nigella sativa seed</td>
+                            <td>Kalonji</td>
+                            <td>Bitters 3% Saponins 15%</td>
+                        </tr>
+                        <tr>
+                            <td>124</td>
+                            <td>Nyctanthes arbortristis leaf</td>
+                            <td>Harsinghar</td>
+                            <td>Alkaloids 0.15%</td>
+                        </tr>
+                        <tr>
+                            <td>125</td>
+                            <td>Ocimum basilicum leaf</td>
+                            <td>Sweet basil</td>
+                            <td>Tannins 5 Vol.oil 1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>126</td>
+                            <td>Ocimum sanctum herb/leaf</td>
+                            <td>Holy basil/Tulsi</td>
+                            <td>Tannins > 7% Ursolic acid > 2%</td>
+                        </tr>
+                        <tr>
+                            <td>127</td>
+                            <td>Oldenlandia corymbosa plant</td>
+                            <td>Khet papra</td>
+                            <td>Alkaloids 0.35%</td>
+                        </tr>
+                        <tr>
+                            <td>128</td>
+                            <td>Onosma echioides root</td>
+                            <td>Ratanjot</td>
+                            <td>Alkamine 1%</td>
+                        </tr>
+                        <tr>
+                            <td>129</td>
+                            <td>Operculina tupethum root</td>
+                            <td>Nisoth</td>
+                            <td>Resin > 10%</td>
+                        </tr>
+                        <tr>
+                            <td>130</td>
+                            <td>Opuntia dilleni herb</td>
+                            <td>Vidara</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>131</td>
+                            <td>Orchis mascula tuber</td>
+                            <td>Salep misri</td>
+                            <td>Saponins 4% Mucilage 20%</td>
+                        </tr>
+                        <tr>
+                            <td>132</td>
+                            <td>Phyllanthus niruri herb</td>
+                            <td>Bhui amla</td>
+                            <td>Bitters 1.4%-2%</td>
+                        </tr>
+                        <tr>
+                            <td>133</td>
+                            <td>Picrorhiza kurroa root</td>
+                            <td>Kutki</td>
+                            <td>Kutkin 4%-6%, Bitters >6%</td>
+                        </tr>
+                        <tr>
+                            <td>134</td>
+                            <td>Piper cubeba fruit</td>
+                            <td>Kabab chini</td>
+                            <td>Piperine 1.0%</td>
+                        </tr>
+                        <tr>
+                            <td>135</td>
+                            <td>Piper longum fruit</td>
+                            <td>Pippali</td>
+                            <td>Piperine 5%</td>
+                        </tr>
+                        <tr>
+                            <td>136</td>
+                            <td>Piper nigrum fruit</td>
+                            <td>Kalimirch</td>
+                            <td>Piperine > 10%</td>
+                        </tr>
+                        <tr>
+                            <td>137</td>
+                            <td>Pistacia integerrima gall</td>
+                            <td>Kakrashingi</td>
+                            <td>Tannins 20%</td>
+                        </tr>
+                        <tr>
+                            <td>138</td>
+                            <td>Plumbago indica root</td>
+                            <td>Chitrakmool</td>
+                            <td>Alkaloids 0.8%-0.15%</td>
+                        </tr>
+                        <tr>
+                            <td>139</td>
+                            <td>Polygala chinensis root</td>
+                            <td>Senaga Indian</td>
+                            <td>Saponins 5%</td>
+                        </tr>
+                        <tr>
+                            <td>140</td>
+                            <td>Pongamia glabra seed</td>
+                            <td>Karanj</td>
+                            <td>Fixed oil 10% Bitters 1%</td>
+                        </tr>
+                        <tr>
+                            <td>141</td>
+                            <td>Prunus serotina bark</td>
+                            <td>Wild cherry</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>142</td>
+                            <td>Psoralea corylifolia seed</td>
+                            <td>Babchi</td>
+                            <td>Psoralen > 5%</td>
+                        </tr>
+                        <tr>
+                            <td>143</td>
+                            <td>Pterocarpus marsupium wood</td>
+                            <td>Bijasar Powder</td>
+                            <td>Alkaloids 0.4% Pterostibene 4%-5%</td>
+                        </tr>
+                        <tr>
+                            <td>144</td>
+                            <td>Pterocarpus santalinus bark</td>
+                            <td>Red sandalwood</td>
+                            <td>Santalin > 3%</td>
+                        </tr>
+                        <tr>
+                            <td>145</td>
+                            <td>Pueraria tuberose root</td>
+                            <td>Bidarikand</td>
+                            <td>Flavones 6%</td>
+                        </tr>
+                        <tr>
+                            <td>146</td>
+                            <td>Punica granatum rind</td>
+                            <td>Anar</td>
+                            <td>Ellagic acid by HPLC > 8%, Tannins 10-20%</td>
+                        </tr>
+                        <tr>
+                            <td>147</td>
+                            <td>Putranjiva roxburghii berry</td>
+                            <td>Putranjiva</td>
+                            <td>Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>148</td>
+                            <td>Pyrus malus fruit</td>
+                            <td>Apple</td>
+                            <td>Iron 4-6%</td>
+                        </tr>
+                        <tr>
+                            <td>149</td>
+                            <td>Quercus infectoria gall</td>
+                            <td>Majuphal</td>
+                            <td>Tannins 40%</td>
+                        </tr>
+                        <tr>
+                            <td>150</td>
+                            <td>Randia dumetorum fruit</td>
+                            <td>Mainphal</td>
+                            <td>Oleanolic acid > 5%</td>
+                        </tr>
+                        <tr>
+                            <td>151</td>
+                            <td>Rauwolfia serpentina root</td>
+                            <td>Sarpgandha</td>
+                            <td>Alkaloids >8%</td>
+                        </tr>
+                        <tr>
+                            <td>152</td>
+                            <td>Rheum emodi root</td>
+                            <td>Rhubarb</td>
+                            <td>Oxymethyl Anthraquinones >5%</td>
+                        </tr>
+                        <tr>
+                            <td>153</td>
+                            <td>Ricinus communis leaf</td>
+                            <td>Arand</td>
+                            <td>Alkaloids 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>154</td>
+                            <td>Ricinus cordifolia root</td>
+                            <td>Manjistha</td>
+                            <td>Tannins >2%</td>
+                        </tr>
+                        <tr>
+                            <td>155</td>
+                            <td>Salacia reticulata root</td>
+                            <td>Koranti</td>
+                            <td>Glycosides >15% Flavones >5%</td>
+                        </tr>
+                        <tr>
+                            <td>156</td>
+                            <td>Santalum album wood</td>
+                            <td>Sandal wood</td>
+                            <td>Vol. oil 2%</td>
+                        </tr>
+                        <tr>
+                            <td>157</td>
+                            <td>Sapindus trifoliatus fruit cortex</td>
+                            <td>Ritha</td>
+                            <td>Saponins 20%</td>
+                        </tr>
+                        <tr>
+                            <td>158</td>
+                            <td>Saraca indica bark</td>
+                            <td>Ashoka</td>
+                            <td>Tannins >2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>159</td>
+                            <td>Saussurea lappa root</td>
+                            <td>Kuth</td>
+                            <td>Alkaloids >0.2%</td>
+                        </tr>
+                        <tr>
+                            <td>160</td>
+                            <td>Semecarpus anacardium kernel</td>
+                            <td>Godambi</td>
+                            <td>Anacardic acid 0.4%</td>
+                        </tr>
+                        <tr>
+                            <td>161</td>
+                            <td>Sida cordifolia root</td>
+                            <td>Bala</td>
+                            <td>Alkaloids >0.1%</td>
+                        </tr>
+                        <tr>
+                            <td>162</td>
+                            <td>Silybum marianum seed</td>
+                            <td>Milk thistle</td>
+                            <td>Flavones >50% Siymarin 50%</td>
+                        </tr>
+                        <tr>
+                            <td>163</td>
+                            <td>Solanum nigrum berry</td>
+                            <td>Makoi</td>
+                            <td>Alkaloids 0.2% Bitters >1%</td>
+                        </tr>
+                        <tr>
+                            <td>164</td>
+                            <td>Solanum xanthocarpum plant</td>
+                            <td>Kantkari</td>
+                            <td>Solasodin >1%</td>
+                        </tr>
+                        <tr>
+                            <td>165</td>
+                            <td>Spinacia oleracea leaf</td>
+                            <td>Spinach</td>
+                            <td>Vit K by TLC</td>
+                        </tr>
+                        <tr>
+                            <td>166</td>
+                            <td>Stychonos nux vomica seed</td>
+                            <td>Kuchla</td>
+                            <td>Alkaloids 3%-6%</td>
+                        </tr>
+                        <tr>
+                            <td>167</td>
+                            <td>Swertia chirata plant</td>
+                            <td>Chireta</td>
+                            <td>Bitters 4%</td>
+                        </tr>
+                        <tr>
+                            <td>168</td>
+                            <td>Symplocos racemosa bark</td>
+                            <td>Lodhra</td>
+                            <td>Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>169</td>
+                            <td>Taraxacum officinale herb</td>
+                            <td>Kanphul</td>
+                            <td>Bitters 2.5% Alkaloids 0.5%</td>
+                        </tr>
+                        <tr>
+                            <td>170</td>
+                            <td>Tecomella undulata bark</td>
+                            <td>Rohu</td>
+                            <td>Tannins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>171</td>
+                            <td>Tephrosia purpurea plant</td>
+                            <td>Sarphunkha</td>
+                            <td>Rutin 2%-6% by HPLC</td>
+                        </tr>
+                        <tr>
+                            <td>172</td>
+                            <td>Terminalia arjuna bark</td>
+                            <td>Arjuna</td>
+                            <td>Tannins >25% Arjunic acid >1%</td>
+                        </tr>
+                        <tr>
+                            <td>173</td>
+                            <td>Terminalia belerica fruit</td>
+                            <td>Baheda</td>
+                            <td>Tannins >10%</td>
+                        </tr>
+                        <tr>
+                            <td>174</td>
+                            <td>Terminalia chebula root</td>
+                            <td>Harir</td>
+                            <td>Tannins 20%-40%</td>
+                        </tr>
+                        <tr>
+                            <td>175</td>
+                            <td>Tinospora cardifolia root</td>
+                            <td>Guduchi</td>
+                            <td>Bitters >1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>176</td>
+                            <td>Trachyspermum ammi fruit</td>
+                            <td>Ajowan</td>
+                            <td>Vol. oil 10%</td>
+                        </tr>
+                        <tr>
+                            <td>177</td>
+                            <td>Tribulus terrestris fruit</td>
+                            <td>Gokhru</td>
+                            <td>Saponins 20%-60%</td>
+                        </tr>
+                        <tr>
+                            <td>178</td>
+                            <td>Trichosanthes dioica leaf</td>
+                            <td>Patol patra</td>
+                            <td>Saponins 10%</td>
+                        </tr>
+                        <tr>
+                            <td>179</td>
+                            <td>Trigonella foenumgraecum seed</td>
+                            <td>Methi</td>
+                            <td>Saponins 15%-40% Fiber 50%</td>
+                        </tr>
+                        <tr>
+                            <td>180</td>
+                            <td>Trikatu</td>
+                            <td>Combination</td>
+                            <td>Vol. oil >1% Piperine >2%</td>
+                        </tr>
+                        <tr>
+                            <td>181</td>
+                            <td>Triphala</td>
+                            <td>Combination</td>
+                            <td>Tannins >25%</td>
+                        </tr>
+                        <tr>
+                            <td>182</td>
+                            <td>Triticum sativum bran</td>
+                            <td>Wheat bran</td>
+                            <td>Vit B1=40mcg/g B2=.28mcg/g B5=1130mcg/g</td>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>Triticum sativum germ</td>
+                            <td>Wheat germ Oil</td>
+                            <td>Vit.E 0.8% by HPLC</td>
+                        </tr>
+                        <tr>
+                            <td>184</td>
+                            <td>Tylophora indica leaf</td>
+                            <td>Anantmul</td>
+                            <td>Alkaloids 0.1%</td>
+                        </tr>
+                        <tr>
+                            <td>185</td>
+                            <td>Urginea indica bulb</td>
+                            <td>Indian Scilla</td>
+                            <td>Glycosides 10%</td>
+                        </tr>
+                        <tr>
+                            <td>186</td>
+                            <td>Valeriana wallichi root</td>
+                            <td>Tagar</td>
+                            <td>Valeric acid 0.8%</td>
+                        </tr>
+                        <tr>
+                            <td>187</td>
+                            <td>Viburnum spp. Bark</td>
+                            <td>Narvel</td>
+                            <td>Tannins 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>188</td>
+                            <td>Viola odorata flower</td>
+                            <td>Gul banafsha</td>
+                            <td>Saponins 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>189</td>
+                            <td>Vitex negundo leaf</td>
+                            <td>Nirgundi</td>
+                            <td>Alkaloids 0.15%</td>
+                        </tr>
+                        <tr>
+                            <td>190</td>
+                            <td>Vitis vinifera fruit/seed</td>
+                            <td>Draksha</td>
+                            <td>Polyphenols>20%</td>
+                        </tr>
+                        <tr>
+                            <td>191</td>
+                            <td>Wedelia calendulacea herb</td>
+                            <td>Bhangra</td>
+                            <td>Tannins 5% Saponins 2%</td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>Withania somnifera root</td>
+                            <td>Ashwagandha</td>
+                            <td>Withanolides > 2.5%</td>
+                        </tr>
+                        <tr>
+                            <td>193</td>
+                            <td>Woodfordia floribunda flower</td>
+                            <td>Dhai-phul</td>
+                            <td>Tannins 7%</td>
+                        </tr>
+                        <tr>
+                            <td>194</td>
+                            <td>Zingiber officinale rhizome</td>
+                            <td>Ginger</td>
+                            <td>Gingerols by HPLC> 5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         </section>
+         <!-- services-area-end -->
+
+
+
+
+      </main>
+      <!-- main-area-end -->
+
+      <!-- footer-area -->
+      <footer>
+         <div class="footer-area tp-footer-white-content theme-bg pt-95">
+            <div class="tp-footer-top pb-25">
+               <div class="container">
+                  <div class="row" style="justify-content: space-between;">
+                     <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-1 mb-40 wow fadeInUp" data-wow-delay=".2s">
+                           <div class="tp-footer-widget__content mb-95">
+                              <i>FEEL FREE TO CONTACT US</i>
+                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">+918980662631</a></h4>
+                                
+                           </div>
+                           <div class="tp-footer-widget__sub-sec">
+                              <span class="tp-footer-widget__sub-title mb-5">Career</span>
+                              <p>Nam eget dui vel quam sodales semper quis porttitor <br> tortor. Vivamus quis ex nulla ...Nam eget dui vel quam <br> sodales semper quis porttitor tortor.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-2 mb-40 wow fadeInUp" data-wow-delay=".4s">
+                           <span class="tp-footer-widget__title mb-15">Useful links</span>
+                           <div class="tp-footer-widget__links mb-35">
+                              <ul>
+                                 <li><a href="contact.html">Contact us</a></li>
+                                 <li><a href="about.html">Help & About us</a></li>
+                              </ul>
+                           </div>
+                           
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="tp-footer-widget footer-2-col-4 mb-40 wow fadeInUp" data-wow-delay=".8s">
+                           <span class="tp-footer-widget__title mb-15">Contact Info</span>
+                           <div class="tp-footer-widget__links mb-120">
+                              <ul>
+                                 <li>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </li>
+                                 <li><a href="tel:+918980662631">+918980662631</a></li>
+                                 <li><a href="mailto:  "> jenish@aksharavira.com <br> info@aksharavira.com </a></li>
+                                 <li>Office Hours: 8AM - 11PM</li>
+                                 <li>Sunday - Wekend Day</li>
+                              </ul>
+                           </div>
+                           <div class="tp-footer-widget__social fw-social">
+                              <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
+                              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              <a href="#"><i class="fa-light fa-basketball"></i></a>
+                               
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-area-bottom fw-border">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                        <div class="footer-widget__copyright copyright-white">
+                           <span>  © Copyright ©2025 <a href="index.html">Akshar Avira Pharma</a>. <i>All Rights Reserved Copyright</i></span>
+                        </div>
+                     </div> 
+                      
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- footer-area-end -->
+       <script>
+       document.getElementById("whatsappButton").addEventListener("click", function () {
+         const phoneNumber = "919876543210"; // Replace with your WhatsApp number (with country code)
+         window.open(`https://wa.me/${phoneNumber}`, "_blank");
+     });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let inquiryButton = document.getElementById("inquiryButton");
+    let inquiryModal = document.getElementById("inquiryModal");
+    let closeModal = document.querySelector(".close");
+
+    // Ensure modal is hidden initially
+    inquiryModal.style.display = "none";
+
+    // Open modal on button click
+    inquiryButton.addEventListener("click", function () {
+        inquiryModal.style.display = "flex";
+    });
+
+    // Close modal on clicking close button
+    closeModal.addEventListener("click", function () {
+        inquiryModal.style.display = "none";
+    });
+
+    // Close modal if clicking outside content
+    window.addEventListener("click", function (event) {
+        if (event.target === inquiryModal) {
+            inquiryModal.style.display = "none";
+        }
+    });
+});
+
+
+     </script>
+
+      <!-- JS here -->
+      <script src="assets/js/jquery.js"></script>
+      <script src="assets/js/waypoints.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/swiper-bundle.js"></script>
+      <script src="assets/js/slick.js"></script>
+      <script src="assets/js/magnific-popup.js"></script>
+      <script src="assets/js/counterup.js"></script>
+      <script src="assets/js/wow.js"></script>
+      <script src="assets/js/isotope-pkgd.js"></script>
+      <script src="assets/js/imagesloaded-pkgd.js"></script>
+      <script src="assets/js/ajax-form.js"></script>
+      <script src="assets/js/aos.js"></script>
+      <script src="assets/js/nice-select.js"></script>
+      <script src="assets/js/meanmenu.js"></script>
+      <script src="assets/js/jquery.appear.js"></script>
+      <script src="assets/js/jquery.knob.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
+
+
+</html>
