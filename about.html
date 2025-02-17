@@ -52,8 +52,133 @@
     transform: scale(1.1);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
+.inquiry-button {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.inquiry-button img {
+    width: 35px;
+    height: 35px;
+}
+
+.inquiry-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    min-width: 300px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group div {
+    flex: 1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.send-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.send-btn:hover {
+    background: #0056b3;
+}
       </style>
    </head>
+
+   <div class="inquiry-button" id="inquiryButton">
+      <img src="./assets/img/icon/question.png" alt="Inquiry">
+  </div>
+  
+  <div id="inquiryModal" class="modal">
+     <div class="modal-content">
+         <span class="close">&times;</span>
+         <h2>Product Inquiry</h2>
+         
+         <div class="input-group">
+             <div>
+                 <label>Your Name *</label>
+                 <input type="text" placeholder="Your name here">
+             </div>
+             <div>
+                 <label>Your Email *</label>
+                 <input type="email" placeholder="Your email here">
+             </div>
+         </div>
+  
+         <div class="input-group">
+             <div>
+                 <label>Your Contact *</label>
+                 <input type="text" placeholder="e.g. (+91) 94288 88076">
+             </div>
+         </div>
+  
+         <label>Message *</label>
+         <textarea placeholder="Tell us a few words"></textarea>
+  
+         <button class="send-btn">SEND MESSAGE</button>
+     </div>
+  </div>
 
 
    <div class="whatsapp-button" id="whatsappButton">
@@ -86,9 +211,9 @@
                   <div class="row align-items-center">
                      <div class="col-lg-4">
                         <div class="header-top-mob">
-                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg>
+                           <!-- <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg>
                            <span>Help Desk :</span>
-                           <a href="tel:+9159008855"> +918980662631 </a>
+                           <a href="tel:+9159008855"> +91 8980662531 </a> -->
                         </div>
                      </div>
                      <div class="col-lg-8">
@@ -140,14 +265,14 @@
             <div class="row align-items-center">
                <div class="col-md-4 col-10">
                   <div class="tp-mob-logo">
-                     <a href="index.html">  <img style="height:10vw; object-fit: contain;width:fit-content" src="assets/img/logo/logoWithName.png" alt="logo"></a>
+                     <a href="index.html">  <img style="height:50px; object-fit: contain;width:fit-content" src="assets/img/logo/logo.png" alt="logo"></a>
                   </div>
                </div>
                <div class="col-md-8 col-2">
                   <div class="tp-mobile-bar d-flex align-items-center justify-content-end">
                      <div class="tp-bt-btn-banner d-none d-md-block d-xl-none mr-30">
                         <a class="tp-bt-btn" href="tel:123456">
-                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg><span>Help Desk :</span>+918980662631
+                           <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#0E63FF"/><circle cx="7" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="2" r="2" fill="#0E63FF"/><circle cx="12" cy="7" r="2" fill="#0E63FF"/><circle cx="12" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="7" r="2" fill="#0E63FF"/><circle cx="7" cy="12" r="2" fill="#0E63FF"/><circle cx="7" cy="17" r="2" fill="#0E63FF"/><circle cx="2" cy="7" r="2" fill="#0E63FF"/><circle cx="2" cy="12" r="2" fill="#0E63FF"/></svg><span>Help Desk :</span>+91 8980662531
                         </a>
                      </div>
                      <button class="tp-menu-toggle"><i class="far fa-bars"></i></button>
@@ -160,7 +285,7 @@
       <div class="tpsideinfo tp-side-info-area">
          <button class="tpsideinfo__close"><i class="fal fa-times"></i></button>
          <div class="tpsideinfo__logo mb-40">
-            <a href="index.html"><img src="assets/img/logo/white-logo.png" alt="logo"></a>
+            <a href="index.html"><img src="./assets//img/logo/logo.png" alt="logo"></a>
          </div>
 
          <div class="mobile-menu"></div>
@@ -169,13 +294,14 @@
             <p class=" d-none d-xl-block">Our mission is to ensure the generation of accurate and precise findings.</p>
             <span>Contact Us</span>
             <a href="#"><i class="fa-solid fa-star"></i>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </a>
-            <a href="tel:61383766284"><i class="fa-solid fa-star"></i>+918980662631</a>
+            <a href="tel:61383766284"><i class="fa-solid fa-star"></i>+91 8980662531</a>
          </div>
          <div class="tpsideinfo__socialicon">
              
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-skype"></i></a>
+           <a href="#"><i class="fa-brands fa-linkedin"></i></a></a>
+                               <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                              
          </div>
       </div>
       <!-- sidebar-info-end -->
@@ -223,20 +349,27 @@
                   <div class="col-xl-6 col-lg-8 col-12">
                      <div class="about-content about-align mb-60 wow fadeInRight" data-wow-delay=".3s">
                         <div class="tp-section">
-                           <h3 class="tp-section__title ab-title mb-25">We’ll Ensure You Alwasy Get Best Results.</h3>
-                           <a class="tp-section__link" href="#">Read our MIssion & Vission <i class="fa-solid fa-arrow-right"></i></a>
-                           <p class=" mr-20 mb-40">Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscipit loborti excommodo habent claritatem insitamconse quat.Exerci tationlobortis nisl aliquip ex ea commodo habent claritatem insitamconse quat.</p>
+                            <h3 class="tp-section__title ab-title mb-25">We’ll Ensure You Always Get the Best Results.</h3>
+                            <a class="tp-section__link" href="#">Read our Mission & Vision <i class="fa-solid fa-arrow-right"></i></a>
+                            <p class="mr-20 mb-20">
+                                At <strong>AksharPharma</strong>, we are committed to delivering high-quality pharmaceutical APIs and Intermediates. 
+                                Our focus on excellence, innovation, and customer satisfaction ensures that we provide the best solutions 
+                                to improve global healthcare.  
+                            </p>
                         </div>
                         <div class="tp-about__info-list ab-check-list mb-55">
-                           <ul>
-                              <li><i class="fa-solid fa-check"></i>Extramural Funding</li>
-                              <li><i class="fa-solid fa-check"></i>Bacteria Markers</li>
-                              <li><i class="fa-solid fa-check"></i>Nam nec mi euismod euismod</li>
-                              <li><i class="fa-solid fa-check"></i>In aliquet dui nec lectus</li>
-                           </ul>
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i>Extramural Funding – Supporting research and innovation in pharmaceuticals.</li>
+                                <li><i class="fa-solid fa-check"></i>Bacteria Markers – Advancing scientific solutions for better healthcare.</li>
+                                <li><i class="fa-solid fa-check"></i>Global Expansion – Reaching new markets for greater impact.</li>
+                                <li><i class="fa-solid fa-check"></i>Innovative Solutions – Driving progress through cutting-edge technology.</li>
+                            </ul>
                         </div>
-                        <div class="about-content__btn"><a href="about.html" class="tp-btn">About us</a></div>
-                     </div>
+                        <div class="about-content__btn">
+                            <a href="about.html" class="tp-btn">About us</a>
+                        </div>
+                    </div>
+                    
                   </div>
                </div>
             </div>
@@ -432,8 +565,7 @@
                            <div class="nabmission mb-30">
                               <div class="nabmission__content text-center ml-50 mr-50 pt-20">
                                  <h4 class="nabmission__title mb-35">Our Mission is Give You Always Best Results.</h4>
-                                 <p class="mb-35">Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscipit loborti excommodo habent claritatem insitamconse quat.Exerci tationlobortis nisl aliquip ex ea commodo habent claritatem insitamconse quat.</p>
-                                 <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscip</p>
+                                 <p class="mb-35">At AksharPharma, we strive to be a leading global provider of high-quality pharmaceutical APIs and Intermediates by delivering superior products at competitive prices while upholding the highest ethical standards. Our commitment to quality, customer service, and global expansion allows us to support the healthcare industry in improving lives worldwide. Through innovation and excellence, we ensure that our customers receive the best solutions to enhance health and well-being across the globe.</p>
                               </div>
                            </div>
                         </div>
@@ -455,10 +587,20 @@
                         <div class="col-xl-6 col-lg-6 col-md-12 order-lg-2">
                            <div class="nabmission mb-30">
                               <div class="nabmission__content text-center ml-50 mr-50 pt-20">
-                                 <h4 class="nabmission__title mb-35">We are Trusted by over 25000+ of customers</h4>
-                                 <p class="mb-35">Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscipit loborti excommodo habent claritatem insitamconse quat.Exerci tationlobortis nisl aliquip ex ea commodo habent claritatem insitamconse quat.</p>
-                                 <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscip</p>
-                              </div>
+                                 <h4 class="nabmission__title mb-35">Our Vision</h4>
+                                 <p class="mb-35">
+                                     At <strong>AksharPharma</strong>, we envision a world where everyone has access to 
+                                     high-quality pharmaceutical APIs and Intermediates to lead a healthier life. 
+                                     Our mission is to be the <strong>leading global supplier</strong>, providing superior products and 
+                                     services that contribute to the well-being of people worldwide.
+                                 </p>
+                                 <p>
+                                     We are committed to achieving this by upholding the highest quality standards, 
+                                     delivering exceptional customer service, and expanding our global reach to 
+                                     make a lasting impact on global healthcare.
+                                 </p>
+                             </div>
+                             
                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-6 order-lg-1">
@@ -494,7 +636,7 @@
                         <div class="tp-footer-widget footer-2-col-1 mb-40 wow fadeInUp" data-wow-delay=".2s">
                            <div class="tp-footer-widget__content mb-95">
                               <i>FEEL FREE TO CONTACT US</i>
-                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">+918980662631</a></h4>
+                              <h4 class="tp-footer-widget__contact mb-20"><a href="tel:61383766284">+91 8980662531</a></h4>
                                 
                            </div>
                            <div class="tp-footer-widget__sub-sec">
@@ -521,17 +663,16 @@
                            <div class="tp-footer-widget__links mb-120">
                               <ul>
                                  <li>27, Sagar Industrial estate, Katargam, Surat, Gujarat, India 395004 </li>
-                                 <li><a href="tel:+918980662631">+918980662631</a></li>
+                                 <li><a href="tel:+91 8980662531">+91 8980662531</a></li>
                                  <li><a href="mailto:  "> jenish@aksharavira.com <br> info@aksharavira.com </a></li>
-                                 <li>Office Hours: 8AM - 11PM</li>
-                                 <li>Sunday - Wekend Day</li>
+                                  
                               </ul>
                            </div>
                            <div class="tp-footer-widget__social fw-social">
                               <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
-                              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                               <a href="#"><i class="fa-brands fa-twitter"></i></a>
                               <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                              <a href="#"><i class="fa-light fa-basketball"></i></a>
+                              
                                
                            </div>
                         </div>
