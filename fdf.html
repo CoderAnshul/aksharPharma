@@ -4,7 +4,7 @@
 <head>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title> Akshar Avira Pharma</title>
+      <title> AksharAvira Pharma</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,6 +26,158 @@
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="table.css">
       <style>
+        .pi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .pi-table th, 
+        .pi-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .pi-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .pi-query-btn {
+            background-color: #00a9e0;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .pi-query-btn:hover {
+            background-color: #0089b7;
+        }
+
+        /* Modal Styles */
+        .pi-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pi-modal-content {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .pi-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .pi-modal-title {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .pi-close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+        }
+
+        .pi-form-group {
+            margin-bottom: 20px;
+        }
+
+        .pi-form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .pi-form-group input,
+        .pi-form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+            font-size: 14px;
+        }
+
+        .pi-form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .pi-required::after {
+            content: " *";
+            color: #e74c3c;
+        }
+
+        .pi-submit-btn {
+            background-color: #00a9e0;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pi-submit-btn:hover {
+            background-color: #0089b7;
+        }
+
+        .pi-form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .pi-form-column {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .pi-form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        .ask-query {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.ask-query:hover {
+    background-color: #0056b3;
+}
+
         .whatsapp-button {
    position: fixed;
    bottom: 40px;
@@ -143,8 +295,30 @@ input, textarea {
 .send-btn:hover {
     background: #0056b3;
 }
+.top-button {
+    position: fixed;
+    bottom: 182px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #2dac4b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
      </style>
    </head>
+   <div class="top-button" >
+    <a style="transform: rotate(-90deg); margin-bottom:0px" class="tp-section__link" href="#"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
    <div class="inquiry-button" id="inquiryButton">
     <img src="./assets/img/icon/question.png" alt="Inquiry">
 </div>
@@ -178,6 +352,60 @@ input, textarea {
        <button class="send-btn">SEND MESSAGE</button>
    </div>
 </div>
+
+<div class="pi-modal" id="piInquiryModal">
+    <div class="pi-modal-content">
+        <div class="pi-modal-header">
+            <h2 class="pi-modal-title">Product Inquiry</h2>
+            <button class="pi-close-btn" id="piCloseModal">×</button>
+        </div>
+        
+        <form id="piInquiryForm">
+            <div class="pi-form-group">
+                <label for="piProductName" class="pi-required">Product Name</label>
+                <input type="text" id="piProductName" name="productName" readonly>
+            </div>
+            
+            <div class="pi-form-row">
+                <div class="pi-form-column">
+                    <div class="pi-form-group">
+                        <label for="piYourName" class="pi-required">Your Name</label>
+                        <input type="text" id="piYourName" name="yourName" placeholder="Your name here" required>
+                    </div>
+                </div>
+                <div class="pi-form-column">
+                    <div class="pi-form-group">
+                        <label for="piYourEmail" class="pi-required">Your Email</label>
+                        <input type="email" id="piYourEmail" name="yourEmail" placeholder="Your email here" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pi-form-row">
+                <div class="pi-form-column">
+                    <div class="pi-form-group">
+                        <label for="piYourContact" class="pi-required">Your Contact</label>
+                        <input type="tel" id="piYourContact" name="yourContact" placeholder="e.g. (+91) 94288 88076" required>
+                    </div>
+                </div>
+                <div class="pi-form-column">
+                    <div class="pi-form-group">
+                        <label for="piYourSubject" class="pi-required">Your Subject</label>
+                        <input type="text" id="piYourSubject" name="yourSubject" placeholder="Your subject here" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pi-form-group">
+                <label for="piMessage" class="pi-required">Message</label>
+                <textarea id="piMessage" name="message" placeholder="Tell us a few words" required></textarea>
+            </div>
+            
+            <button type="submit" class="pi-submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
 
    <div class="whatsapp-button" id="whatsappButton">
     <img src="assets/img/whatsapp.png" alt="WhatsApp">
@@ -339,123 +567,148 @@ input, textarea {
                             <td>Abiraterone tablets</td>
                             <td>250 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Deferasirox dispersible tablets</td>
                             <td>100 mg, 250 mg, 400 mg, 500 mg</td>
                             <td>Dispersible Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Thalidomide</td>
                             <td>100 mg</td>
                             <td>Capsules</td>
+                             
                         </tr>
                         <tr>
                             <td>Lenalidomide</td>
                             <td>25 mg</td>
                             <td>Capsules</td>
+                             
                         </tr>
                         <tr>
                             <td>Aprepitant</td>
                             <td>80 mg & 125 mg</td>
                             <td>Capsules</td>
+                             
                         </tr>
                         <tr>
                             <td>Epirubicin</td>
                             <td>100 mg, 50 mg, 10 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Doxorubicin</td>
                             <td>50 mg, 10 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Docetaxel</td>
                             <td>120 mg, 80 mg, 20 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Paclitaxel</td>
                             <td>300 mg, 260 mg, 30 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Gemcitabine</td>
                             <td>1000 mg, 200 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Filgrastim</td>
                             <td>300 mcg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Gefitinib</td>
                             <td>250 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Erlotinib</td>
                             <td>150 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Imatinib</td>
                             <td>400 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Vinblastine</td>
                             <td>10 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Temozolomide</td>
                             <td>5 mg, 100 mg, 250 mg</td>
                             <td>Capsules</td>
+                             
                         </tr>
                         <tr>
                             <td>Everolimus</td>
                             <td>5 mg, 10 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Fulvestrant</td>
                             <td>250 mg</td>
                             <td>Injection</td>
+                             
                         </tr>
                         <tr>
                             <td>Sorafenib</td>
                             <td>200 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Busulfan</td>
                             <td>60 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Melphalan</td>
                             <td>50 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                         <tr>
                             <td>Bicalutamide</td>
                             <td>50 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Flutamide</td>
                             <td>250 mg</td>
                             <td>Tablets</td>
+                             
                         </tr>
                         <tr>
                             <td>Fludarabine</td>
                             <td>50 mg</td>
                             <td>Vial</td>
+                             
                         </tr>
                     </tbody>
+                    
                 </table>
             </div>
         
@@ -467,11 +720,11 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Favipiravir</td><td>200 mg, 400 mg, 800 mg</td><td>Tablets</td></tr>
-                    <tr><td>Remdesivir</td><td>100 mg</td><td>Vial</td></tr>
-                    <tr><td>Ulinastatin</td><td>100,000 IU</td><td>Vial</td></tr>
-                    <tr><td>Posaconazole</td><td>50 mg, 20 mg, 10 mg</td><td>Capsules</td></tr>
-                    <tr><td>Isavuconazole</td><td>100 mg</td><td>Capsules</td></tr>
+                    <tr><td>Favipiravir</td><td>200 mg, 400 mg, 800 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Remdesivir</td><td>100 mg</td><td>Vial</td> </tr>
+                    <tr><td>Ulinastatin</td><td>100,000 IU</td><td>Vial</td> </tr>
+                    <tr><td>Posaconazole</td><td>50 mg, 20 mg, 10 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Isavuconazole</td><td>100 mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
             
@@ -483,12 +736,12 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Mycophenolate sodium</td><td>360 mg</td><td>Tablets</td></tr>
-                    <tr><td>Leflunomide</td><td>10 mg</td><td>Tablets</td></tr>
-                    <tr><td>Cyclosporin</td><td>25 mg, 50 mg, 100 mg</td><td>Capsules</td></tr>
-                    <tr><td>Azathioprine</td><td>50 mg, 20 mg, 10 mg</td><td>Capsules</td></tr>
-                    <tr><td>Sirolimus</td><td>1 mg</td><td>Capsules</td></tr>
-                    <tr><td>Tacrolimus</td><td>0.5 mg, 1 mg, 2 mg</td><td>Capsules</td></tr>
+                    <tr><td>Mycophenolate sodium</td><td>360 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Leflunomide</td><td>10 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cyclosporin</td><td>25 mg, 50 mg, 100 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Azathioprine</td><td>50 mg, 20 mg, 10 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Sirolimus</td><td>1 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Tacrolimus</td><td>0.5 mg, 1 mg, 2 mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
         
@@ -500,8 +753,8 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Curcumin 95%</td><td>500 mg</td><td>Capsules</td></tr>
-                    <tr><td>L-Glutamine</td><td>15 g sachets</td><td>Powders</td></tr>
+                    <tr><td>Curcumin 95%</td><td>500 mg</td><td>Capsules</td> </tr>
+                    <tr><td>L-Glutamine</td><td>15 g sachets</td><td>Powders</td> </tr>
                 </table>
             </div>
             
@@ -513,34 +766,34 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Amiodarone HCI</td><td>100 mg, 200 mg</td><td>Tablets</td></tr>
-                    <tr><td>Amlodipine Besilate</td><td>5 mg, 10 mg</td><td>Tablets</td></tr>
-                    <tr><td>Atenolol</td><td>50 mg, 100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Captopril</td><td>25 mg, 50 mg</td><td>Tablets</td></tr>
-                    <tr><td>Carvedilol</td><td>3.125 mg, 12.5 mg, 25 mg</td><td>Tablets</td></tr>
-                    <tr><td>Diltiazem Hydrochloride</td><td>30 mg, 60 mg</td><td>Tablets</td></tr>
-                    <tr><td>Enalapril Maleate</td><td>5 mg, 10 mg, 20 mg</td><td>Tablets</td></tr>
-                    <tr><td>Lisinopril</td><td>5 mg, 10 mg</td><td>Tablets</td></tr>
-                    <tr><td>Losartan Potassium</td><td>50 mg, 100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Metoprolol Tartrate</td><td>50 mg, 100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Nifedipine Extended Release</td><td>20 mg, 30 mg</td><td>Tablets</td></tr>
-                    <tr><td>Prazosin Hydrochloride</td><td>1 mg</td><td>Tablets</td></tr>
-                    <tr><td>Ramipril</td><td>10 mg</td><td>Tablets</td></tr>
-                    <tr><td>Propranolol Hydrochloride</td><td>40 mg</td><td>Tablets</td></tr>
-                    <tr><td>Acetazolamide</td><td>250 mg</td><td>Tablets</td></tr>
-                    <tr><td>Amiloride HCI</td><td>5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Hydrochlorothiazide</td><td>25 mg, 50 mg</td><td>Tablets</td></tr>
-                    <tr><td>Spironolactone</td><td>25 mg, 50 mg, 100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Valsartan</td><td>80 mg, 160 mg</td><td>Tablets</td></tr>
-                    <tr><td>Atorvastatin</td><td>10 mg, 40 mg</td><td>Tablets</td></tr>
-                    <tr><td>Rosuvastatin</td><td>20 mg, 40 mg</td><td>Tablets</td></tr>
-                    <tr><td>Isosorbide Mono Nitrate</td><td>10 mg, 20 mg, 30 mg, 40 mg</td><td>Tablets</td></tr>
-                    <tr><td>Nebivolol</td><td>2.5 mg, 5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Verapamil</td><td>80 mg</td><td>Tablets</td></tr>
-                    <tr><td>Telmisartan</td><td>20 mg</td><td>Tablets</td></tr>
-                    <tr><td>Frusemide</td><td>20 mg</td><td>Tablets</td></tr>
-                    <tr><td>Olmesartan</td><td>20 mg</td><td>Tablets</td></tr>
-                    <tr><td>Fenofibrate Capsules</td><td>200 mg</td><td>Tablets</td></tr>
+                    <tr><td>Amiodarone HCI</td><td>100 mg, 200 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Amlodipine Besilate</td><td>5 mg, 10 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Atenolol</td><td>50 mg, 100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Captopril</td><td>25 mg, 50 mg</td><td>Tablets</td>< /tr>
+                    <tr><td>Carvedilol</td><td>3.125 mg, 12.5 mg, 25 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Diltiazem Hydrochloride</td><td>30 mg, 60 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Enalapril Maleate</td><td>5 mg, 10 mg, 20 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Lisinopril</td><td>5 mg, 10 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Losartan Potassium</td><td>50 mg, 100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Metoprolol Tartrate</td><td>50 mg, 100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Nifedipine Extended Release</td><td>20 mg, 30 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Prazosin Hydrochloride</td><td>1 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ramipril</td><td>10 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Propranolol Hydrochloride</td><td>40 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Acetazolamide</td><td>250 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Amiloride HCI</td><td>5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Hydrochlorothiazide</td><td>25 mg, 50 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Spironolactone</td><td>25 mg, 50 mg, 100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Valsartan</td><td>80 mg, 160 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Atorvastatin</td><td>10 mg, 40 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Rosuvastatin</td><td>20 mg, 40 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Isosorbide Mono Nitrate</td><td>10 mg, 20 mg, 30 mg, 40 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Nebivolol</td><td>2.5 mg, 5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Verapamil</td><td>80 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Telmisartan</td><td>20 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Frusemide</td><td>20 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Olmesartan</td><td>20 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Fenofibrate Capsules</td><td>200 mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -552,21 +805,21 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Amodiaquine Oral Suspension</td><td>50mg / 5ml</td><td>Suspension</td></tr>
-                    <tr><td>Artemether & Lumefantrine</td><td>20mg+12mg/5ml</td><td>Syrup</td></tr>
-                    <tr><td>Artemether & Lumefantrine</td><td>20mg+12mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>40mg + 240mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>60mg + 360mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>80mg+480mg</td><td>Tablets</td></tr>
-                    <tr><td>Chloroquine Phosphate</td><td>250mg</td><td>Tablets</td></tr>
-                    <tr><td>Hydroxychloroquine</td><td>200mg</td><td>Tablets</td></tr>
-                    <tr><td>Mefloquine Hydrochloride</td><td>250mg</td><td>Tablets</td></tr>
-                    <tr><td>Mepacrine Hydrochloride Tablets</td><td>50mg, 100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Quinine Sulphate Tablets</td><td>300 mg</td><td>Tablets</td></tr>
-                    <tr><td>Proguanil Hydrochloride Tablets</td><td>100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Atovaquone + Proguanil Tablets</td><td>25mg+100mg</td><td>Tablets</td></tr>
-                    <tr><td>Primaquine</td><td>2.5 mg, 5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Pyronaridine+ Artesunate</td><td>180 mg 60 mg, 60 mg + 20 mg</td><td>Tablets</td></tr>
+                    <tr><td>Amodiaquine Oral Suspension</td><td>50mg / 5ml</td><td>Suspension</td> </tr>
+                    <tr><td>Artemether & Lumefantrine</td><td>20mg+12mg/5ml</td><td>Syrup</td> </tr>
+                    <tr><td>Artemether & Lumefantrine</td><td>20mg+12mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>40mg + 240mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>60mg + 360mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>80mg+480mg</td><td>Tablets</td> </tr>
+                    <tr><td>Chloroquine Phosphate</td><td>250mg</td><td>Tablets</td> </tr>
+                    <tr><td>Hydroxychloroquine</td><td>200mg</td><td>Tablets</td> </tr>
+                    <tr><td>Mefloquine Hydrochloride</td><td>250mg</td><td>Tablets</td> </tr>
+                    <tr><td>Mepacrine Hydrochloride Tablets</td><td>50mg, 100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Quinine Sulphate Tablets</td><td>300 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Proguanil Hydrochloride Tablets</td><td>100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Atovaquone + Proguanil Tablets</td><td>25mg+100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Primaquine</td><td>2.5 mg, 5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Pyronaridine+ Artesunate</td><td>180 mg 60 mg, 60 mg + 20 mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -578,10 +831,10 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Cetirizine Dihydrochloride</td><td>5mg, 10 mg</td><td>Tablets</td></tr>
-                    <tr><td>Cimetidine Tablets</td><td>200 mg, 400 mg</td><td>Tablets</td></tr>
-                    <tr><td>Levocetirizine</td><td>5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Levocetirizine+ Montelukast</td><td>5 mg + 10 mg</td><td>Tablets</td></tr>
+                    <tr><td>Cetirizine Dihydrochloride</td><td>5mg, 10 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cimetidine Tablets</td><td>200 mg, 400 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Levocetirizine</td><td>5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Levocetirizine+ Montelukast</td><td>5 mg + 10 mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -595,23 +848,23 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Esomeprazole Magnesium</td><td>40mg</td><td>Tablets</td></tr>
-                    <tr><td>Gastro - Resistant Omeprazole</td><td>10mg, 20mg</td><td>Tablets</td></tr>
-                    <tr><td>Pantoprazole</td><td>40mg</td><td>Tablets</td></tr>
-                    <tr><td>Rabeprazole Sodium</td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Rabeprazole Sodium</td><td>20mg</td><td>Tablets</td></tr>
-                    <tr><td>Dexrabeprazole</td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Bisacodyl</td><td>5mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Magnesium Hydroxide and Aluminium</td><td>240mg / 5ml</td><td>Oral Suspension</td></tr>
-                    <tr><td>Magnesium Hydroxide and Aluminium</td><td></td><td>Tablets</td></tr>
-                    <tr><td>Hydroxide Tablets</td><td></td><td></td></tr>
-                    <tr><td>Metoclopramide</td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Ondansetron</td><td>4mg</td><td>Tablets</td></tr>
-                    <tr><td>Domperidone</td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Hyoscine Butylbromide</td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Sodium Picosulphate</td><td>400mg</td><td>Tablets</td></tr>
-                    <tr><td>Ursodeoxycholic acid</td><td>300mg</td><td>Tablets</td></tr>
+                    <tr><td>Esomeprazole Magnesium</td><td>40mg</td><td>Tablets</td> </tr>
+                    <tr><td>Gastro - Resistant Omeprazole</td><td>10mg, 20mg</td><td>Tablets</td> </tr>
+                    <tr><td>Pantoprazole</td><td>40mg</td><td>Tablets</td> </tr>
+                    <tr><td>Rabeprazole Sodium</td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Rabeprazole Sodium</td><td>20mg</td><td>Tablets</td> </tr>
+                    <tr><td>Dexrabeprazole</td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Bisacodyl</td><td>5mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Magnesium Hydroxide and Aluminium</td><td>240mg / 5ml</td><td>Oral Suspension</td> </tr>
+                    <tr><td>Magnesium Hydroxide and Aluminium</td><td></td><td>Tablets</td> </tr>
+                    <tr><td>Hydroxide Tablets</td><td></td><td></td> </tr>
+                    <tr><td>Metoclopramide</td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ondansetron</td><td>4mg</td><td>Tablets</td> </tr>
+                    <tr><td>Domperidone</td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Hyoscine Butylbromide</td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Sodium Picosulphate</td><td>400mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ursodeoxycholic acid</td><td>300mg</td><td>Tablets</td> </tr>
                     <tr><td>Racecadotril</td><td>100mg</td><td>Tablets</td></tr>
                 </table>
             </div>
@@ -625,22 +878,22 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Azithromycin</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Clarithromycin</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Erythromycin Stearate</td><td>125mg / 5ml</td><td>Oral Suspension</td></tr>
-                    <tr><td>Erythromycin Stearate</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Clindamycin Hydrochloride</td><td>150mg, 300 mg</td><td>Capsules</td></tr>
-                    <tr><td>Ciprofloxacin</td><td>250mg, 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Levofloxacin</td><td>250mg, 500 mg, 750 mg</td><td>Tablets</td></tr>
-                    <tr><td>Nalidixic Acid</td><td>500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Norfloxacin</td><td>200mg, 400mg</td><td>Tablets</td></tr>
-                    <tr><td>Ofloxacin</td><td>200mg, 400mg</td><td>Tablets</td></tr>
-                    <tr><td>Paediatric Co-Trimoxazole Oral Suspension</td><td>240mg / 5ml</td><td>Oral Suspension</td></tr>
-                    <tr><td>Metronidazole</td><td>125mg/5ml</td><td>Oral Suspension</td></tr>
-                    <tr><td>Metronidazole</td><td>250mg, 500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Ivermectin</td><td>3 mg, 6 mg, 12 mg</td><td>Tablets</td></tr>
-                    <tr><td>Rifaximin</td><td>400 mg</td><td>Tablets</td></tr>
-                    <tr><td>Linezolid</td><td>600 mg</td><td>Tablets</td></tr>
+                    <tr><td>Azithromycin</td><td>250mg, 500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Clarithromycin</td><td>250mg, 500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Erythromycin Stearate</td><td>125mg / 5ml</td><td>Oral Suspension</td> </tr>
+                    <tr><td>Erythromycin Stearate</td><td>250mg, 500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Clindamycin Hydrochloride</td><td>150mg, 300 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Ciprofloxacin</td><td>250mg, 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Levofloxacin</td><td>250mg, 500 mg, 750 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Nalidixic Acid</td><td>500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Norfloxacin</td><td>200mg, 400mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ofloxacin</td><td>200mg, 400mg</td><td>Tablets</td> </tr>
+                    <tr><td>Paediatric Co-Trimoxazole Oral Suspension</td><td>240mg / 5ml</td><td>Oral Suspension</td> </tr>
+                    <tr><td>Metronidazole</td><td>125mg/5ml</td><td>Oral Suspension</td> </tr>
+                    <tr><td>Metronidazole</td><td>250mg, 500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ivermectin</td><td>3 mg, 6 mg, 12 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Rifaximin</td><td>400 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Linezolid</td><td>600 mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -652,12 +905,12 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Fluconazole</td><td>50 mg, 150mg, 200 mg</td><td>Capsules</td></tr>
-                    <tr><td>Ketoconazole</td><td>200 mg</td><td>Tablets</td></tr>
-                    <tr><td>Nystatin Oral Suspension</td><td>1100000 IU/ml</td><td>Oral Suspension</td></tr>
-                    <tr><td>Secnidazole</td><td>500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Griseofulvin</td><td>250 mg, 500 mg</td><td>Tablets</td></tr>
-                    <tr><td>Itraconazole</td><td>100 mg, 200 mg</td><td>Capsules</td></tr>
+                    <tr><td>Fluconazole</td><td>50 mg, 150mg, 200 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Ketoconazole</td><td>200 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Nystatin Oral Suspension</td><td>1100000 IU/ml</td><td>Oral Suspension</td> </tr>
+                    <tr><td>Secnidazole</td><td>500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Griseofulvin</td><td>250 mg, 500 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Itraconazole</td><td>100 mg, 200 mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
             
@@ -670,9 +923,9 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Clotrimazole Lotion</td><td>1% w/w</td><td>Lotion</td></tr>
-                    <tr><td>Clotrimazole Pessaries</td><td>100 mg</td><td>Tablets</td></tr>
-                    <tr><td>Nystatin Vaginal Pessaries</td><td>100000IU</td><td>Tablets</td></tr>
+                    <tr><td>Clotrimazole Lotion</td><td>1% w/w</td><td>Lotion</td> </tr>
+                    <tr><td>Clotrimazole Pessaries</td><td>100 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Nystatin Vaginal Pessaries</td><td>100000IU</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -684,20 +937,20 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Amoxicillin and Potassium Clavulanate</td><td>625g</td><td>Tablets</td></tr>
-                    <tr><td>Amoxicillin</td><td>250mg</td><td>Capsules</td></tr>
-                    <tr><td>Amoxicillin</td><td>500mg</td><td>Capsules</td></tr>
-                    <tr><td>Amoxicillin</td><td>125mg</td><td>Dispersible Tablets</td></tr>
-                    <tr><td>Amoxicillin</td><td>250mg</td><td>Tablets</td></tr>
-                    <tr><td>Amoxicillin Oral Suspension</td><td>125mg</td><td>Suspension</td></tr>
-                    <tr><td>Amoxicillin Oral Suspension</td><td>250mg / 5ml</td><td>Suspension</td></tr>
-                    <tr><td>Ampicillin</td><td>250mg</td><td>Capsules</td></tr>
-                    <tr><td>Ampicillin</td><td>500mg</td><td>Capsules</td></tr>
-                    <tr><td>Ampicillin & Cloxacillin</td><td>250mg + 250mg</td><td>Capsules</td></tr>
-                    <tr><td>Ampicillin</td><td>125mg</td><td>Dispersible Tablets</td></tr>
-                    <tr><td>Ampicillin Oral Suspension</td><td>125mg/5ml</td><td>Oral Suspension</td></tr>
-                    <tr><td>Flucloxacillin</td><td>250 mg, 500 mg</td><td>Capsules</td></tr>
-                    <tr><td>Cloxacillin</td><td>250 mg, 500 mg</td><td>Capsules</td></tr>
+                    <tr><td>Amoxicillin and Potassium Clavulanate</td><td>625g</td><td>Tablets</td>< /tr>
+                    <tr><td>Amoxicillin</td><td>250mg</td><td>Capsules</td> </tr>
+                    <tr><td>Amoxicillin</td><td>500mg</td><td>Capsules</td> </tr>
+                    <tr><td>Amoxicillin</td><td>125mg</td><td>Dispersible Tablets</td> </tr>
+                    <tr><td>Amoxicillin</td><td>250mg</td><td>Tablets</td> </tr>
+                    <tr><td>Amoxicillin Oral Suspension</td><td>125mg</td><td>Suspension</td> </tr>
+                    <tr><td>Amoxicillin Oral Suspension</td><td>250mg / 5ml</td><td>Suspension</td> </tr>
+                    <tr><td>Ampicillin</td><td>250mg</td><td>Capsules</td> </tr>
+                    <tr><td>Ampicillin</td><td>500mg</td><td>Capsules</td> </tr>
+                    <tr><td>Ampicillin & Cloxacillin</td><td>250mg + 250mg</td><td>Capsules</td>< /tr>
+                    <tr><td>Ampicillin</td><td>125mg</td><td>Dispersible Tablets</td> </tr>
+                    <tr><td>Ampicillin Oral Suspension</td><td>125mg/5ml</td><td>Oral Suspension</td> </tr>
+                    <tr><td>Flucloxacillin</td><td>250 mg, 500 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cloxacillin</td><td>250 mg, 500 mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
             
@@ -710,24 +963,24 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Cefaclor</td><td>250mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefadroxil</td><td>500mg</td><td>Capsules</td></tr>
-                    <tr><td>Cefalexin</td><td>250mg</td><td>Capsules</td></tr>
-                    <tr><td>Cefalexin</td><td>500mg</td><td>Capsules</td></tr>
-                    <tr><td>Cefalexin</td><td>125mg</td><td>Dispersible Tablets</td></tr>
-                    <tr><td>Cefalexin</td><td>250mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefalexin</td><td>125mg/5ml</td><td>60ml</td></tr>
-                    <tr><td>Cefdinir</td><td>300mg</td><td>Capsules</td></tr>
-                    <tr><td>Cefixime</td><td>100mg</td><td>Capsules</td></tr>
-                    <tr><td>Cefixime</td><td>200mg</td><td>Capsules</td></tr>
-                    <tr><td>Cefixime</td><td>100mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefixime</td><td>200mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Dispersible Tablets</td></tr>
-                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Dry Syrup</td></tr>
-                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefpodoxime Proxetil</td><td>200mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefuroxime Axetil</td><td>250mg, 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Cefuroxime Axetil</td><td>125mg/5ml</td><td>Dry Syrup</td></tr>
+                    <tr><td>Cefaclor</td><td>250mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefadroxil</td><td>500mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cefalexin</td><td>250mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cefalexin</td><td>500mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cefalexin</td><td>125mg</td><td>Dispersible Tablets</td> </tr>
+                    <tr><td>Cefalexin</td><td>250mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefalexin</td><td>125mg/5ml</td><td>60ml</td> </tr>
+                    <tr><td>Cefdinir</td><td>300mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cefixime</td><td>100mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cefixime</td><td>200mg</td><td>Capsules</td> </tr>
+                    <tr><td>Cefixime</td><td>100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefixime</td><td>200mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Dispersible Tablets</td> </tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Dry Syrup</td> </tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefpodoxime Proxetil</td><td>200mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefuroxime Axetil</td><td>250mg, 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cefuroxime Axetil</td><td>125mg/5ml</td><td>Dry Syrup</td> </tr>
                 </table>
             </div>
             
@@ -740,17 +993,17 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Gliclazide</td><td>60mg</td><td>Modified Release Tablets</td></tr>
-                    <tr><td>Glipizide</td><td>5mg</td><td>Tablets</td></tr>
-                    <tr><td>Metformin Hydrochloride</td><td>850mg</td><td>Sustained Release Tablets</td></tr>
-                    <tr><td>Metformin Tablets</td><td>1000mg</td><td>Tablets</td></tr>
-                    <tr><td>Metformin Tablets</td><td>500mg</td><td>Tablets</td></tr>
-                    <tr><td>Metformin Tablets</td><td>850mg</td><td>Tablets</td></tr>
-                    <tr><td>Tenaligliptin</td><td>20mg</td><td>Tablets</td></tr>
-                    <tr><td>Gliclazide+ Metformin</td><td>80mg + 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Glimepiride+ Metformin</td><td>2mg + 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Voglibose</td><td>0.3mg, 0.4mg</td><td>Tablets</td></tr>
-                    <tr><td>Glibenclamide</td><td>5mg</td><td>Tablets</td></tr>
+                    <tr><td>Gliclazide</td><td>60mg</td><td>Modified Release Tablets</td> </tr>
+                    <tr><td>Glipizide</td><td>5mg</td><td>Tablets</td> </tr>
+                    <tr><td>Metformin Hydrochloride</td><td>850mg</td><td>Sustained Release Tablets</td> </tr>
+                    <tr><td>Metformin Tablets</td><td>1000mg</td><td>Tablets</td> </tr>
+                    <tr><td>Metformin Tablets</td><td>500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Metformin Tablets</td><td>850mg</td><td>Tablets</td> </tr>
+                    <tr><td>Tenaligliptin</td><td>20mg</td><td>Tablets</td> </tr>
+                    <tr><td>Gliclazide+ Metformin</td><td>80mg + 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Glimepiride+ Metformin</td><td>2mg + 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Voglibose</td><td>0.3mg, 0.4mg</td><td>Tablets</td> </tr>
+                    <tr><td>Glibenclamide</td><td>5mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -763,20 +1016,20 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Celecoxib</td><td>100mg, 200mg</td><td>Capsules</td></tr>
-                    <tr><td>Diclofenac Gel</td><td>1% w/w</td><td>Gel</td></tr>
-                    <tr><td>Slow Diclofenac Tablets</td><td>50mg, 100mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>100mg</td><td>Tablets</td></tr>
-                    <tr><td>Diclofenac & Paracetamol</td><td>50mg + 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Ibuprofen</td><td>200mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>400mg</td><td>Tablets</td></tr>
-                    <tr><td>Paediatric Paracetamol Oral Solution</td><td>125mg/5ml</td><td>Oral Solution</td></tr>
-                    <tr><td>Carbocisteine</td><td>2% w/v, 5% w/v</td><td>Syrup</td></tr>
-                    <tr><td>Serratiopeptidase</td><td>5mg, 10mg</td><td>Tablets</td></tr>
-                    <tr><td>Thiocolchicoside</td><td>8mg</td><td>Capsules</td></tr>
-                    <tr><td>Promethazine</td><td>5mg, 25mg</td><td>Tablets</td></tr>
-                    <tr><td>Naproxen</td><td>250mg, 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Hydrocortisone Tablets</td><td>5mg, 10mg, 20mg</td><td>Tablets</td></tr>
+                    <tr><td>Celecoxib</td><td>100mg, 200mg</td><td>Capsules</td> </tr>
+                    <tr><td>Diclofenac Gel</td><td>1% w/w</td><td>Gel</td> </tr>
+                    <tr><td>Slow Diclofenac Tablets</td><td>50mg, 100mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Diclofenac & Paracetamol</td><td>50mg + 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ibuprofen</td><td>200mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>400mg</td><td>Tablets</td> </tr>
+                    <tr><td>Paediatric Paracetamol Oral Solution</td><td>125mg/5ml</td><td>Oral Solution</td> </tr>
+                    <tr><td>Carbocisteine</td><td>2% w/v, 5% w/v</td><td>Syrup</td> </tr>
+                    <tr><td>Serratiopeptidase</td><td>5mg, 10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Thiocolchicoside</td><td>8mg</td><td>Capsules</td> </tr>
+                    <tr><td>Promethazine</td><td>5mg, 25mg</td><td>Tablets</td> </tr>
+                    <tr><td>Naproxen</td><td>250mg, 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Hydrocortisone Tablets</td><td>5mg, 10mg, 20mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
@@ -790,27 +1043,27 @@ input, textarea {
                         <th>Strength</th>
                         <th>Dosage Form</th>
                     </tr>
-                    <tr><td>Amitriptyline</td><td>25mg</td><td>Tablets</td></tr>
-                    <tr><td>Cabergoline</td><td>0.5mg</td><td>Tablets</td></tr>
-                    <tr><td>Gastro Resistant Sodium Valproate</td><td>100mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>200mg</td><td>Tablets</td></tr>
-                    <tr><td>Pregabalin</td><td>75mg</td><td>Capsules</td></tr>
-                    <tr><td></td><td>150mg</td><td>Capsules</td></tr>
-                    <tr><td>Sumatriptan</td><td>50mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>100mg</td><td>Tablets</td></tr>
-                    <tr><td>Quetiapine Fumarate</td><td>25mg, 50mg, 100mg</td><td>Tablets</td></tr>
-                    <tr><td>Piracetam</td><td>100mg, 200mg, 400mg</td><td>Tablets</td></tr>
-                    <tr><td>Escitalopram</td><td>10mg</td><td>Tablets</td></tr>
-                    <tr><td>Levodopa & Carbidopa</td><td>275mg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>110mg</td><td>Tablets</td></tr>
-                    <tr><td>Risperidone</td><td>2mg</td><td>Tablets</td></tr>
-                    <tr><td>Divalproex</td><td>250mg, 500mg</td><td>Tablets</td></tr>
-                    <tr><td>Levetiracetam</td><td>100mg/ml</td><td>Oral Solution</td></tr>
-                    <tr><td>Procyclidine</td><td>5mg</td><td>Tablets</td></tr>
-                    <tr><td>Neostigmine</td><td>15mg</td><td>Tablets</td></tr>
-                    <tr><td>Alprazolam</td><td>0.25mg, 5mg</td><td>Tablets</td></tr>
-                    <tr><td>Lithium Carbonate</td><td>300mg</td><td>Tablets</td></tr>
-                    <tr><td>Gabapentin</td><td>300mg</td><td>Capsules</td></tr>
+                    <tr><td>Amitriptyline</td><td>25mg</td><td>Tablets</td> </tr>
+                    <tr><td>Cabergoline</td><td>0.5mg</td><td>Tablets</td> </tr>
+                    <tr><td>Gastro Resistant Sodium Valproate</td><td>100mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>200mg</td><td>Tablets</td> </tr>
+                    <tr><td>Pregabalin</td><td>75mg</td><td>Capsules</td> </tr>
+                    <tr><td></td><td>150mg</td><td>Capsules</td> </tr>
+                    <tr><td>Sumatriptan</td><td>50mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Quetiapine Fumarate</td><td>25mg, 50mg, 100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Piracetam</td><td>100mg, 200mg, 400mg</td><td>Tablets</td> </tr>
+                    <tr><td>Escitalopram</td><td>10mg</td><td>Tablets</td> </tr>
+                    <tr><td>Levodopa & Carbidopa</td><td>275mg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>110mg</td><td>Tablets</td> </tr>
+                    <tr><td>Risperidone</td><td>2mg</td><td>Tablets</td> </tr>
+                    <tr><td>Divalproex</td><td>250mg, 500mg</td><td>Tablets</td> </tr>
+                    <tr><td>Levetiracetam</td><td>100mg/ml</td><td>Oral Solution</td> </tr>
+                    <tr><td>Procyclidine</td><td>5mg</td><td>Tablets</td> </tr>
+                    <tr><td>Neostigmine</td><td>15mg</td><td>Tablets</td> </tr>
+                    <tr><td>Alprazolam</td><td>0.25mg, 5mg</td><td>Tablets</td> </tr>
+                    <tr><td>Lithium Carbonate</td><td>300mg</td><td>Tablets</td> </tr>
+                    <tr><td>Gabapentin</td><td>300mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
             
@@ -818,42 +1071,42 @@ input, textarea {
             <div class="table-container">
                 <div class="table-header">ANTIGOUT DRUGS</div>
                 <table>
-                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
-                    <tr><td>Allopurinol Tablets</td><td>100mg, 300mg</td><td>Tablets</td></tr>
-                    <tr><td>Colchicine Tablets</td><td>500mcg</td><td>Tablets</td></tr>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th> </tr>
+                    <tr><td>Allopurinol Tablets</td><td>100mg, 300mg</td><td>Tablets</td> </tr>
+                    <tr><td>Colchicine Tablets</td><td>500mcg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
             <div class="table-container">
                 <div class="table-header">ERECTILE DYSFUNCTION AGENT</div>
                 <table>
-                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
-                    <tr><td>Tadalafil</td><td>5mg, 10mg, 20mg</td><td>Tablets</td></tr>
-                    <tr><td>Dapoxetine</td><td>30mg, 60mg, 90mg</td><td>Tablets</td></tr>
-                    <tr><td>Sildenafil</td><td>25mg, 50mg, 100mg</td><td>Tablets</td></tr>
-                    <tr><td>Vardenafil (Under development)</td><td>5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Avanafil</td><td>50 mg, 100 mg</td><td>Capsules</td></tr>
-                    <tr><td>Sildenafil</td><td>10 mg</td><td>Oral jelly</td></tr>
-                    <tr><td>Vardenafil (Under development)</td><td>10 mg</td><td>Oral jelly</td></tr>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th> </tr>
+                    <tr><td>Tadalafil</td><td>5mg, 10mg, 20mg</td><td>Tablets</td> </tr>
+                    <tr><td>Dapoxetine</td><td>30mg, 60mg, 90mg</td><td>Tablets</td> </tr>
+                    <tr><td>Sildenafil</td><td>25mg, 50mg, 100mg</td><td>Tablets</td> </tr>
+                    <tr><td>Vardenafil (Under development)</td><td>5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Avanafil</td><td>50 mg, 100 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Sildenafil</td><td>10 mg</td><td>Oral jelly</td> </tr>
+                    <tr><td>Vardenafil (Under development)</td><td>10 mg</td><td>Oral jelly</td> </tr>
                 </table>
             </div>
             
             <div class="table-container">
                 <div class="table-header">BENIGN PROSTATE HYPERPLASIA AGENT</div>
                 <table>
-                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
-                    <tr><td>Finasteride</td><td>1 mg, 5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Flutamide</td><td>3250mg</td><td>Tablets</td></tr>
-                    <tr><td>Tamsulosin Hydrochloride (Modified Release) & Finasteride</td><td>0.4 mg + 5 mg</td><td>Capsules</td></tr>
-                    <tr><td>Tamsulosin Hydrochloride (Modified Release) & Dutasteride</td><td>0.4 mg + 5 mg</td><td>Capsules</td></tr>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th> </tr>
+                    <tr><td>Finasteride</td><td>1 mg, 5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Flutamide</td><td>3250mg</td><td>Tablets</td> </tr>
+                    <tr><td>Tamsulosin Hydrochloride (Modified Release) & Finasteride</td><td>0.4 mg + 5 mg</td><td>Capsules</td> </tr>
+                    <tr><td>Tamsulosin Hydrochloride (Modified Release) & Dutasteride</td><td>0.4 mg + 5 mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
             
             <div class="table-container">
                 <div class="table-header">ANTI OBESITY</div>
                 <table>
-                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th></tr>
-                    <tr><td>Orlistat</td><td>60mg</td><td>Capsules</td></tr>
+                    <tr><th>Product</th><th>Strength</th><th>Dosage Form</th> </tr>
+                    <tr><td>Orlistat</td><td>60mg</td><td>Capsules</td> </tr>
                 </table>
             </div>
             
@@ -861,30 +1114,30 @@ input, textarea {
             <div class="table-container">
                 <div class="table-header">ANTI-ACNE</div>
                 <table>
-                    <tr><td>Azelaic acid cream</td><td>10% w/w</td><td>Cream</td></tr>
-                    <tr><td></td><td>20% w/w</td><td>Cream</td></tr>
+                    <tr><td>Azelaic acid cream</td><td>10% w/w</td><td>Cream</td> </tr>
+                    <tr><td></td><td>20% w/w</td><td>Cream</td> </tr>
                 </table>
             </div>
             
             <div class="table-container">
                 <div class="table-header">THYROID REGULATORS</div>
                 <table>
-                    <tr><td>Levothyroxine</td><td>25 mcg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>50 mcg</td><td>Tablets</td></tr>
-                    <tr><td></td><td>100 mcg</td><td>Tablets</td></tr>
-                    <tr><td>Thyroxine</td><td>0.1 mg</td><td>Tablets</td></tr>
+                    <tr><td>Levothyroxine</td><td>25 mcg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>50 mcg</td><td>Tablets</td> </tr>
+                    <tr><td></td><td>100 mcg</td><td>Tablets</td> </tr>
+                    <tr><td>Thyroxine</td><td>0.1 mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
             
             <div class="table-container">
                 <div class="table-header">BONE MODIFYING AGENTS</div>
                 <table>
-                    <tr><td>Alendronate</td><td>5 mg, 10 mg, 35 mg, 70 mg</td><td>Tablets</td></tr>
-                    <tr><td>Risedronate</td><td>35 mg, 150 mg</td><td>Tablets</td></tr>
-                    <tr><td>Ibandronate</td><td>50 mg, 150 mg</td><td>Tablets</td></tr>
-                    <tr><td>Ergocalciferol</td><td>All strength</td><td>Tablets</td></tr>
-                    <tr><td>Calcium & Cholecalciferol</td><td>All strength</td><td>Tablets</td></tr>
-                    <tr><td>Vitamin D3</td><td>60000 IU</td><td>Granules/Sachets</td></tr>
+                    <tr><td>Alendronate</td><td>5 mg, 10 mg, 35 mg, 70 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Risedronate</td><td>35 mg, 150 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ibandronate</td><td>50 mg, 150 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Ergocalciferol</td><td>All strength</td><td>Tablets</td> </tr>
+                    <tr><td>Calcium & Cholecalciferol</td><td>All strength</td><td>Tablets</td> </tr>
+                    <tr><td>Vitamin D3</td><td>60000 IU</td><td>Granules/Sachets</td> </tr>
                     <tr><td></td><td>400 IU/ml</td><td>Drops</td></tr>
                 </table>
             </div>
@@ -893,16 +1146,16 @@ input, textarea {
             <div class="table-container">
                 <div class="table-header">RESPIRATORY</div>
                 <table>
-                    <tr><td>Xylometazoline</td><td>0.1%</td><td>Nasal Drops BP</td></tr>
-                    <tr><td>Theophylline</td><td>200 mg, 400 mg</td><td>Tablets</td></tr>
-                    <tr><td>Montelukast</td><td>4 mg, 5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Salbutamol</td><td>2 mg/5 ml</td><td>Syrup</td></tr>
-                    <tr><td>Etophylline & Theophylline</td><td>23 mg + 77 mg/5 ml</td><td>Syrup</td></tr>
-                    <tr><td>Terbutaline</td><td>2.5 mg</td><td>Tablets</td></tr>
-                    <tr><td>Terbutaline Sulphate, Ambroxol, Guaiphenesin and Menthol</td><td>1.5 mg + 15 mg + 50 mg + 1 mg</td><td>Syrup</td></tr>
-                    <tr><td>Bromhexine Hydrochloride</td><td>8 mg</td><td>Tablets</td></tr>
-                    <tr><td>Bromhexine Hydrochloride</td><td>2 mg/4 mg/5 ml</td><td>Syrup</td></tr>
-                    <tr><td>Methyl Prednisolone</td><td>4 mg, 8 mg</td><td>Tablets</td></tr>
+                    <tr><td>Xylometazoline</td><td>0.1%</td><td>Nasal Drops BP</td> </tr>
+                    <tr><td>Theophylline</td><td>200 mg, 400 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Montelukast</td><td>4 mg, 5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Salbutamol</td><td>2 mg/5 ml</td><td>Syrup</td> </tr>
+                    <tr><td>Etophylline & Theophylline</td><td>23 mg + 77 mg/5 ml</td><td>Syrup</td> </tr>
+                    <tr><td>Terbutaline</td><td>2.5 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Terbutaline Sulphate, Ambroxol, Guaiphenesin and Menthol</td><td>1.5 mg + 15 mg + 50 mg + 1 mg</td><td>Syrup</td> </tr>
+                    <tr><td>Bromhexine Hydrochloride</td><td>8 mg</td><td>Tablets</td> </tr>
+                    <tr><td>Bromhexine Hydrochloride</td><td>2 mg/4 mg/5 ml</td><td>Syrup</td> </tr>
+                    <tr><td>Methyl Prednisolone</td><td>4 mg, 8 mg</td><td>Tablets</td> </tr>
                 </table>
             </div>
          </section>
@@ -928,8 +1181,8 @@ input, textarea {
                                 
                            </div>
                            <div class="tp-footer-widget__sub-sec">
-                              <span class="tp-footer-widget__sub-title mb-5">Career</span>
-                              <p>Nam eget dui vel quam sodales semper quis porttitor <br> tortor. Vivamus quis ex nulla ...Nam eget dui vel quam <br> sodales semper quis porttitor tortor.</p>
+                              <!--<span class="tp-footer-widget__sub-title mb-5">Career</span> -->
+                              <p>AksharAvira provides high-quality anticancer APIs, formulations, and herbal extracts to enhance global healthcare and patient well-being.</p>
                            </div>
                         </div>
                      </div>
@@ -973,7 +1226,7 @@ input, textarea {
                   <div class="row">
                      <div class="col-xl-6 col-lg-6 col-md-12 col-12">
                         <div class="footer-widget__copyright copyright-white">
-                           <span>  © Copyright ©2025 <a href="index.html">Akshar Avira Pharma</a>. <i>All Rights Reserved Copyright</i></span>
+                           <span>  © Copyright ©2025 <a href="index.html">AksharAvira Pharma</a>. <i>All Rights Reserved Copyright</i></span>
                         </div>
                      </div> 
                       
@@ -1017,6 +1270,113 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
      </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('piInquiryModal');
+        const closeButton = document.getElementById('piCloseModal');
+        const form = document.getElementById('piInquiryForm');
+        const productNameInput = document.getElementById('piProductName');
+        
+        // Add event listeners to all "Ask Query" buttons
+        const queryButtons = document.querySelectorAll('.pi-query-btn');
+        queryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get product name from data attribute
+                const productName = this.getAttribute('data-product');
+                
+                // Set product name in the form
+                productNameInput.value = productName;
+                
+                // Show modal
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close modal function
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Submit form
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(form);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            console.log('Form submitted:', formObject);
+            
+            // Here you would typically send the data to a server
+            alert(`Thank you for your inquiry about ${productNameInput.value}! We will get back to you soon.`);
+            form.reset();
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close if clicked outside
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('piInquiryModal');
+        const closeButton = document.getElementById('piCloseModal');
+        const form = document.getElementById('piInquiryForm');
+        const productNameInput = document.getElementById('piProductName');
+        
+        if (!modal || !closeButton || !form || !productNameInput) {
+            console.error("One or more modal elements not found.");
+            return;
+        }
+
+        const queryButtons = document.querySelectorAll('.ask-query');
+        if (queryButtons.length === 0) {
+            console.error("No .pi-query-btn buttons found.");
+            return;
+        }
+
+        queryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product') || 'Unknown Product';
+                productNameInput.value = productName;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script> -->
 
       <!-- JS here -->
       <script src="assets/js/jquery.js"></script>
